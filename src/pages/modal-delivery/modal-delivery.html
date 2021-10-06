@@ -1,0 +1,31 @@
+<ion-content class="getstart">
+
+    <div *ngIf="restaurante != 'true'">
+        <img src="assets/imgs/BmBanco.gif" class="deliveryman">
+        <h1 text-center color="orange">{{'DELIVERY.SEARCH' | translate}}</h1>
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+        <div text-center class="cancelar" (click)="cancelar(servicio.cardId)">
+            <button ion-button round color="danger">{{'BOTTONS.CANCEL' | translate}}</button>
+            <h6 text-center color="orange">{{'DELIVERY.ESTIMATED' | translate}}</h6>
+        </div>
+    </div>
+
+    <div *ngIf="restaurante == 'true'">
+        <img src="assets/imgs/BmBanco.gif" class="deliveryman">
+        <h1 text-center color="orange">{{'DELIVERY.SERVICE' | translate}}</h1>
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+        <div text-center class="cancelar" (click)="cancelar(servicio.cardId)">
+            <button ion-button round color="danger">{{'BOTTONS.CANCEL' | translate}}</button>
+            <h6 text-center color="orange">{{'DELIVERY.ESTIMATED' | translate}}</h6>
+        </div>
+    </div>
+
+</ion-content>

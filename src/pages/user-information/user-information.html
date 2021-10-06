@@ -1,0 +1,101 @@
+<ion-header no-border>
+    <ion-navbar color="orange" hideBackButton>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{'USER_INFORMATION.TITLE' | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div class="background animated fadeInDown">
+        <div class="contents">
+            <ion-card>
+                <ion-card-title>
+                    <p class="title1">{{'USER_INFORMATION.WELCOME' | translate}}</p>
+                    <p class="title2">{{'USER_INFORMATION.SUBTITLE' | translate}}</p>
+                </ion-card-title>
+                <form [formGroup]="myForm" novalidate class="animated zoomInUp">
+                    <ion-row>
+                        <ion-col>
+                            <ion-list inset>
+
+                                <!-- Name -->
+                                <ion-item>
+                                    <ion-input type="text" formControlName="username" [placeholder]="username_" [(ngModel)]="UserInfoForm.username"></ion-input>
+                                </ion-item>
+                                <ion-item *ngIf="myForm.get('username').errors && myForm.get('username').dirty">
+                                    <p color="danger" ion-text *ngIf="myForm.get('username').hasError('required')">{{'USER_INFORMATION.REQUIRED' | translate}}</p>
+                                </ion-item>
+
+                                <!-- Apellido -->
+                                <ion-item>
+                                    <ion-input type="text" formControlName="lastname" [placeholder]="lastname_" [(ngModel)]="UserInfoForm.lastname"></ion-input>
+                                </ion-item>
+                                <ion-item *ngIf="myForm.get('lastname').errors && myForm.get('lastname').dirty">
+                                    <p color="danger" ion-text *ngIf="myForm.get('lastname').hasError('required')">{{'USER_INFORMATION.REQUIRED' | translate}}</p>
+                                </ion-item>
+
+                                <!-- Phone Mobile -->
+                                <ion-item>
+                                    <ion-input type="tel" maxlength="10" formControlName="phone" [placeholder]="phone_" [(ngModel)]="UserInfoForm.phone"></ion-input>
+                                </ion-item>
+                                <ion-item *ngIf="myForm.get('phone').errors && myForm.get('phone').dirty">
+                                    <p color="danger" ion-text *ngIf="myForm.get('phone').hasError('required')">{{'USER_INFORMATION.REQUIRED' | translate}}</p>
+                                </ion-item>
+                                <!-- Email Address -->
+                                <ion-item>
+                                    <ion-input type="email" formControlName="email" [placeholder]="email" [(ngModel)]="email"></ion-input>
+                                </ion-item>
+                                <ion-item *ngIf="myForm.get('email').errors && myForm.get('email').dirty">
+                                    <p color="danger" ion-text *ngIf="myForm.get('email').hasError('required')">{{'USER_INFORMATION.REQUIRED' | translate}}</p>
+                                    <p color="danger" ion-text *ngIf="myForm.get('email').hasError('email')">{{'USER_INFORMATION.EMAILIRT' | translate}}</p>
+                                </ion-item>
+                                <br><br>
+                                <div text-center>
+                                    <p class="terminos" (click)="irTerminos()">{{'USER_INFORMATION.TER' | translate}}</p>
+                                    <br>
+                                    <p class="terminos" (click)="irPrivasidad()">{{'USER_INFORMATION.PRI' | translate}}</p>
+                                    <br>
+                                </div>
+                                <ion-item>
+                                    <ion-label>
+                                        <div text-center>
+                                            {{'USER_INFORMATION.ACCEPT' | translate}} <br> {{'USER_INFORMATION.ACCEPTT' | translate}}
+                                        </div>
+                                    </ion-label>
+                                    <ion-checkbox color="orange" formControlName="terminos" [(ngModel)]="terminos"></ion-checkbox>
+                                </ion-item>
+                                <!-- <ion-select type="text" formControlName="location" [(ngModel)]="UserInfoForm.location" interface="action-sheet">
+                                    <ion-option *ngFor="let sucursal of sucursales" [value]="sucursal.$key">{{ sucursal.estado }}</ion-option>
+                                </ion-select> -->
+
+                                <!-- Location Address  -->
+                                <!-- <ion-item>
+                                    <ion-label>{{'USER_INFORMATION.CITY' | translate}}</ion-label>
+                                    <ion-select type="text" formControlName="location" [(ngModel)]="UserInfoForm.location" interface="action-sheet">
+                                        <ion-option *ngFor="let sucursal of sucursales" [value]="sucursal.$key">{{ sucursal.estado }}</ion-option>
+                                    </ion-select>
+                                </ion-item> -->
+                                <!-- <ion-item *ngIf="myForm.get('location').errors && myForm.get('location').dirty">
+                                    <p color="danger" ion-text *ngIf="myForm.get('location').hasError('required')">{{'USER_INFORMATION.REQUIRED' | translate}}</p>
+                                </ion-item> -->
+
+                            </ion-list>
+                        </ion-col>
+                    </ion-row>
+                    <br><br><br>
+
+                    <ion-row>
+                        <ion-col col-6>
+                            <button ion-button block outline color="orange" (click)="cerrarModal()">{{'LOGIN_REGISTRO.BACK' | translate}}</button>
+                        </ion-col>
+                        <ion-col col-6>
+                            <button ion-button block color="orange" (click)="registrarUsuario()" [disabled]="!myForm.valid || terminos==false">{{'USER_INFORMATION.BUTTON' | translate}}</button>
+                        </ion-col>
+                    </ion-row>
+                </form>
+            </ion-card>
+        </div>
+    </div>
+</ion-content>

@@ -1,0 +1,43 @@
+page-food-item-details {
+    img {
+        width: 100%;
+    }
+    .caja {
+        border-radius: 6px;
+        overflow: hidden;
+        height: 3.6rem;
+        font-size: 2.4rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin: 0.4rem 0.2rem;
+        padding: 1px 1px;
+        margin-left: 20px;
+    }
+    .imgDetalle {
+        height: 60%;
+        width: 60%;
+    }
+    .toolbar-title {
+        overflow: visible;
+        text-overflow: clip;
+    }
+    .toolbar-title-md {
+        padding: 6px 12px;
+    }
+    #carrito {
+        color: #ffff;
+        margin-top: 1%;
+    }
+    .tex2 {
+        width: 100%;
+        height: 8rem;
+    }
+    // .carrito {
+    //     max-width: ;
+    //     max-height: 0rem;
+    //     margin-top: 0rem;
+    // }
+    .tituloP {
+        margin-left: 25%;
+    }
+}

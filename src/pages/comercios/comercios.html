@@ -1,0 +1,34 @@
+<ion-header no-border>
+    <ion-navbar color="orange">
+
+        <div text-center>
+            <ion-title>{{'HOME.ES' | translate}}</ion-title>
+        </div>
+
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-content class="card-background-page">
+        <div *ngFor="let categoria of categorias">
+            <ion-card  (click)="goToFoodCategoris(categoria.$key)">
+                <img   [src]="categoria.imagen" />
+                <div class="card-title">{{ categoria.nombre }}</div>
+            </ion-card>
+        </div>
+    </ion-content>
+</ion-content>
+
+ <ion-footer no-border>
+    <ion-toolbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12>
+                    <div text-center>
+                        <button ion-button round block color="orange"  (click)="(goBack())">{{'BOTTONS.BACK' | translate}}</button>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-footer>

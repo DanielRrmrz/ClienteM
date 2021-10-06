@@ -1,0 +1,38 @@
+<ion-header no-border>
+    <ion-navbar color="orange" hideBackButton>
+        <div text-center>
+            <ion-title>Más detalles</ion-title>
+        </div>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card >
+        <ion-card-title color="orange">
+            <div text-center>
+                Ticket
+            </div>
+        </ion-card-title>
+        <div *ngIf="img == undefined">
+            <img src="assets/imgs/ticket.png">
+        </div>
+        <div *ngIf="img != undefined">
+            <img [src]="img">
+        </div>
+    </ion-card>
+</ion-content>
+
+<ion-footer no-border>
+    <ion-toolbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12>
+                    <div text-center>
+                        <button ion-button round block color="orange" (click)="(goBack())">Atras</button>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,260 @@
+{
+    "LANGUAGE": "English Language",
+    "SIDEBAR_List": {
+        "HOME": "Home",
+        "SERV": "Services",
+        "PROF": "Profile",
+        "LOGOUT": "Log out",
+        "HELP": "Need help?",
+        "CONTACT": "Contact us",
+        "RNA": "Register your business here"
+    },
+    "LANGUAGES": [{
+            "ID": "en",
+            "VALUE": "English"
+        },
+        {
+            "ID": "es",
+            "VALUE": "Spanish"
+        }
+    ],
+    "FIRST_LANDING_PAGE": {
+        "LANGUAGE": "Language",
+        "CANCEL": "Cancel",
+        "OK": "Ok",
+        "LOGIN": "Log in",
+        "SIGNUP": "Sign up",
+        "GUEST": "Log in as a guest",
+        "INORDER1": "In order to use our application",
+        "INORDER2": "providing you with a better service,",
+        "INORDER3": "you need to create an account"
+    },
+    "LOGIN_EMAIL": {
+        "EMAIL": "E-mail",
+        "PASSWORD": "Password",
+        "LOGIN": "Log in",
+        "RESETPASSWORD": "Reset password.",
+        "PASSWORDRESET": "We will send you an email with a link to reset your password.",
+        "ICRPASS": "Incorrect password",
+        "INVALIDEMAIL": "Invalid email",
+        "USERNOTFOUND": "Username not found, try again or register",
+        "LOGGIN": "Logging In",
+        "ENTER": "Enter",
+        "BACK": "Back"
+    },
+    "LOGIN_REGISTRO": {
+        "SIGNUP": "Sign up",
+        "EMAIL": "E-mail",
+        "PASSWORD": "Password",
+        "EMAILREGISTER": "This email address is already exists",
+        "PASSWORDSIX": "Passwords must have 6 characters at leas",
+        "REQUIRED": "All fields required",
+        "NEWUSER": "We are creating your account",
+        "ENTER": "Enter",
+        "BACK": "Back",
+        "SIGNUP_": "Sign up",
+        "EMAILIRT": "Incomplete or incorrect email"
+    },
+    "LOGIN": {
+        "SOCIALNET": "Connect with Facebook",
+        "PERSONALDATA": "Complete your personal data",
+        "CONECT": "Connecting",
+        "ERRCONECT": "Unable to connect Facebook",
+        "TRY": "Please try again"
+    },
+    "USER_INFORMATION": {
+        "TITLE": "Your info",
+        "WELCOME": "Welcome to TOC TOC",
+        "SUBTITLE": "Give your information",
+        "BUTTON": "GO",
+        "USERNAME": "Name*",
+        "LASTNAME": "Lastname*",
+        "EMAIL": "Email*",
+        "PHONE": "Phone*",
+        "CITY": "City",
+        "REQUIRED": "This field is required",
+        "EMAILIRT": "The email is not valid",
+        "UPDATEINFO": "Updating your information",
+        "TITLE_": "Try it again",
+        "SUBTITLE_": " Error when updating your information",
+        "OK": "Ok",
+        "TER": "Read Terms and Conditions",
+        "PRI": "Read Notice of Privacy",
+        "ACCEPT": "Accept Terms and Conditions",
+        "ACCEPTT": "and Notice of Privacy"
+    },
+    "HOME": {
+        "PQ": "What you wish",
+        "ES": "Businesses",
+        "PO": "Do you have a pending order. Do you want to continue with the service?"
+    },
+    "PLACE": {
+        "DC": "Where do we get it?",
+        "PQ": "Order what you want from wherever you want",
+        "INPUT1": "Name of businesses?",
+        "INPUT2": "Address, branch office, neighborhood",
+        "LOADING": "Charging",
+        "DELETE": "Delete",
+        "UPDATE": "Modify",
+        "ADDP": "Add products",
+        "DELETEPROD": "Product removed",
+        "DELETENOTPRO": "Product not removed"
+    },
+    "MODPRODUCT": {
+        "WHATDO": "What do we get ?",
+        "QT": "Quantity",
+        "PROD": "Product",
+        "DES": "Description",
+        "ADDPRO": "Product added",
+        "NOTUPDATEPRO": "Product not updated",
+        "TITLE_": "Producto no actualizado",
+        "SUBTITLE_": "Try it again",
+        "UPDATEPRO": "Upgrade product"
+    },
+    "SERV": {
+        "ADDSPOT": "Add a new spot",
+        "CANCELP": "Are you sure you want to cancel your order?",
+        "AMOUNT": "The amount of $ 15.00 will be charged for each additional place. Do you want to continue?",
+        "DELETEP": "Do you want to delete this order?"
+    },
+    "SUMMARY": {
+        "SUMMARY": "Summary",
+        "DC": "Where do we get it",
+        "AD": "where to?",
+        "SELECTV": "Vehicle",
+        "MP": "Paid method",
+        "SETP": "Set paid method",
+        "CP": "Confirm",
+        "CASH": "Cash",
+        "TIP": "Card payment does not include tip",
+        "COMM": "Commission will be charged for card payment.",
+        "TYPETRAN": "<div text-center>Please choose your type of transport</div>",
+        "TYPEPAYM": "<div text-center>Please choose your payment method</div>",
+        "CARDPAYM": "<div text-center>Card payments only accepted</div>",
+        "CASHPAYM": "<div text-center>Only cash payments are accepted</div>"
+    },
+    "MODALPAY": {
+        "OPTIONSPAY": "Payment options",
+        "PAYMETHOD": "Payment method",
+        "ADDPAYMETHOD": "Add payment method",
+        "CASH": "Cash",
+        "CARDNUM": "Card number",
+        "CARDINVALID": "Please enter a valid card number",
+        "DATEINVALID": "Please enter a valid expiration date",
+        "CODEINVALID": "Card successfully registered"
+    },
+    "MAPPAGE": {
+        "LOCATION": "My location",
+        "READY": "Ready!",
+        "FLAT": "Flat, Office, Apartmen"
+    },
+    "DELIVERY": {
+        "SEARCH": "Searching for a delivery guy",
+        "SERVICE": "Requesting service",
+        "ESTIMATED": "Looking for delivery man."
+    },
+    "DELIVERY_TRACKING": {
+        "TITLE": "Track your order",
+        "GUY": "is your delivery guy",
+        "ONHIS": "on his way",
+        "HEBUYING": "he's buying",
+        "JUST": "he just bought",
+        "ARRIVED": "he arrived with your order",
+        "OUTSIDE": "your guy is outside",
+        "SERVICECONF": "Confirmed Service",
+        "GOINGTO": "Going to the establishment",
+        "BUYING": "Buying",
+        "TRAKING": "Traking",
+        "_OUTSIDE": "Outside",
+        "SERVICE": "Service",
+        "ORDER": "accepted your order",
+        "ORDERP": "is preparing your order",
+        "WAY": "It is on the way with your order",
+        "CONFIRMORDER": "Confirmed order",
+        "PREPARINGORDER": "Preparing order"
+    },
+    "PAYMENT": {
+        "PAYSUMM": "Payment summary",
+        "SERVICE": "Service",
+        "TOTAL": "Total",
+        "TICKET": "Ticket",
+        "PRODUCTS": "Products",
+        "SERVICEFEE": "Service fee",
+        "SPOTS": "Aditional spots",
+        "COMMISSION": "Commission",
+        "CARDPAYMENT": "card payment",
+        "TOTAL_": "TOTAL",
+        "CHANGEPAY": "Change payment method",
+        "PAY": "Please pay. To our delivery guy"
+
+    },
+    "MODALSCORE": {
+        "SCORE": "Score",
+        "RATE": "Rate",
+        "COMMENT": "Leave a comment"
+    },
+    "MESSAGE": {
+        "MESSAGE": "Message"
+    },
+    "FOOD_ITEMS": {
+        "TITLE": "Items"
+    },
+    "FOOD_CATEGORIES": {
+        "SERVICECON": "The service cannot be continued. The establishment is already closed"
+    },
+    "FOOD_CATEGORIES_ITEMS": {
+        "REMEMBER": "Remember that you can only choose products from a single store. Do you want to go to another branch office?",
+        "SEARCH": "Search product",
+        "LOADING": "Charging"
+    },
+    "FOOD_ITEMS_DETAILS": {
+        "PRODUCT": "Product",
+        "BUTTON": "Add to Cart",
+        "NOTE": "Note to businesses",
+        "ADDPRODUCT": "Adding product to cart",
+        "ALREADY": "already in your shopping cart",
+        "TRYP": "Try adding your product again",
+        "REMEMBER": "Remember that you can only choose products from a single branch. Currently the cart has products from another branch office",
+        "GOTO": "Go to cart",
+        "NEW": "Crear Nuevo",
+        "ADDP": "Add products",
+        "CART": "it has been successfully added in your shopping cart"
+    },
+    "CART": {
+        "TITLE": "Your Order",
+        "BUTTON": "Continue",
+        "NOPRODUCTS": "No products have been added to the shopping cart",
+        "MORE": "MORE COST OF SHIPPING (WILL DEPEND ON DISTANCE AND TIME, VARY FROM $ 33.5 TO $ 80).",
+        "THESUG": "The suggested consumption is greater than",
+        "TRY": "Please try again",
+        "DELETEP": "Product removed",
+        "NODELETE": "Product not removed",
+        "CANNOT": "You cannot leave the cart without products. To eliminate all products you must cancel the cart",
+        "SURE": "Are you sure you want to cancel the cart?"
+    },
+    "UPDATECART": {
+        "UPDATE": "Modify",
+        "UPDATEORDER": "Modify Order"
+    },
+    "RESETPASS": {
+        "RESET": "Reset",
+        "OK": "Ok"
+    },
+    "PROFILE": {
+        "UPDATEPROFILE": "Your profile was updated",
+        "ERRORPROFILE": "There was a problem updating your profile try again",
+        "UPDATEPROFILE_": "Update profile"
+    },
+    "BOTTONS": {
+        "BACK": "Back",
+        "CONTINUE": "Continue",
+        "CANCEL": "Cancel",
+        "SAVE": "Save",
+        "DELETE": "Delete",
+        "UPDATE": "Modify",
+        "OK": "Ok",
+        "YES": "Yes",
+        "NO": "No"
+    }
+
+}

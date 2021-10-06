@@ -1,0 +1,248 @@
+<ion-header no-border>
+    <ion-navbar color="orange" hideBackButton>
+        <div text-center>
+            <ion-title>{{'PAYMENT.PAYSUMM' | translate}}</ion-title>
+        </div>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col col-12>
+                <ion-card >
+                    <ion-card-content>
+                        <div text-center>
+                            <b>{{'PAYMENT.SERVICE' | translate}}:</b>
+                            <b class="clave">#{{servicio.clave}}</b>
+                        </div>
+                    </ion-card-content>
+                </ion-card>
+                <div *ngIf="type == 1">
+                    <div *ngFor="let pedido of pedidos; let i = index;">
+                        <ion-card >
+                            <ion-card-header no-padding>
+                                <ion-grid>
+                                    <ion-row>
+                                        <ion-col col-6>
+                                            <div text-left>
+                                                <b>{{pedido.nombreLocal}}</b>
+                                            </div>
+                                        </ion-col>
+                                        <ion-col col-6>
+                                            <div text-right>
+                                                <img  src="assets/imgs/ticket.png" (click)="goDetallePedido(pedido.$key)" id="ver">
+                                            </div>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-grid>
+                            </ion-card-header>
+                            <ion-card-content >
+                                <div text-right id="total">
+                                    {{'PAYMENT.TOTAL' | translate}}: {{pedido.total | currency}}
+                                </div>
+                            </ion-card-content>
+                        </ion-card>
+                    </div>
+                </div>
+                <div *ngIf="type == 2">
+                    <div *ngFor="let pedido of pedidos; let i = index;">
+                        <ion-card >
+                            <ion-card-header no-padding>
+                                <ion-grid>
+                                    <ion-row>
+                                        <ion-col col-6>
+                                            <div text-left>
+                                                <b>{{pedido.nombreLocal}}</b>
+                                            </div>
+                                        </ion-col>
+                                        <ion-col col-6>
+                                            <div text-right>
+                                                <img src="assets/imgs/ticket.png" (click)="goDetallePedido(pedido.$key)" id="ver">
+                                            </div>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-grid>
+                            </ion-card-header>
+                            <ion-card-content>
+                                <div text-right id="total">
+                                    {{'PAYMENT.TOTAL' | translate}}: {{pedido.total | currency}}
+                                </div>
+                            </ion-card-content>
+                        </ion-card>
+                    </div>
+                </div>
+                <ion-card >
+                    <ion-card-header>
+                        <div text-left class="text-recibo">
+                            {{'PAYMENT.TICKET' | translate}}
+                        </div>
+                    </ion-card-header>
+                    <div *ngIf="cobrar == null">
+                        <div class="sk-fading-circle">
+                            <div class="sk-circle1 sk-circle"></div>
+                            <div class="sk-circle2 sk-circle"></div>
+                            <div class="sk-circle3 sk-circle"></div>
+                            <div class="sk-circle4 sk-circle"></div>
+                            <div class="sk-circle5 sk-circle"></div>
+                            <div class="sk-circle6 sk-circle"></div>
+                            <div class="sk-circle7 sk-circle"></div>
+                            <div class="sk-circle8 sk-circle"></div>
+                            <div class="sk-circle9 sk-circle"></div>
+                            <div class="sk-circle10 sk-circle"></div>
+                            <div class="sk-circle11 sk-circle"></div>
+                            <div class="sk-circle12 sk-circle"></div>
+                        </div>
+                    </div>
+                    <div *ngIf="cobrar != null">
+                        <ion-card-content>
+                            <div *ngIf="numPedidos > 1">
+                                <ion-grid>
+                                    <ion-row>
+                                        <ion-col col-6>
+                                            <h3 text-left>{{'PAYMENT.PRODUCTS' | translate}}:</h3>
+                                        </ion-col>
+                                        <ion-col col-6>
+                                            <h3 text-right>{{totalProd | currency}}</h3>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-grid>
+                            </div>
+                            <div *ngIf="numPedidos == 1">
+                                <ion-grid>
+                                    <ion-row>
+                                        <ion-col col-6>
+                                            <h3 text-left>{{'PAYMENT.PRODUCTS' | translate}}:</h3>
+                                        </ion-col>
+                                        <ion-col col-6>
+                                            <h3 text-right>{{totalProd | currency}}</h3>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-grid>
+                            </div>
+                            <ion-grid>
+                                <ion-row>
+                                    <ion-col col-6>
+                                        <h3 text-left>{{'PAYMENT.SERVICEFEE' | translate}}:</h3>
+                                    </ion-col>
+                                    <ion-col col-6>
+                                        <h3 text-right>{{comisionServicio | currency}}</h3>
+                                    </ion-col>
+                                </ion-row>
+                            </ion-grid>
+                            <ion-grid>
+                                <ion-row>
+                                    <ion-col text-left>
+                                        {{'PAYMENT.SPOTS' | translate}} ({{totalLugares}}):
+                                    </ion-col>
+                                    <ion-col col-3 text-right>
+                                        {{recargos | currency}}
+                                    </ion-col>
+                                </ion-row>
+                            </ion-grid>
+                            <div *ngIf="servicio.metodo_pago == 'Tarjeta'">
+                                <ion-grid>
+                                    <ion-row>
+                                        <ion-col col-6>
+                                            <h3 text-left>{{'PAYMENT.COMMISSION' | translate}}: <br> ({{'PAYMENT.CARDPAYMENT' | translate}})</h3>
+                                        </ion-col>
+                                        <ion-col col-6>
+                                            <h3 text-right>{{totComision | currency}}</h3>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-grid>
+                            </div>
+                            <ion-grid>
+                                <ion-row>
+                                    <ion-col col-6>
+                                        <h3 text-left><b>{{'PAYMENT.TOTAL_' | translate}}:</b> </h3>
+                                    </ion-col>
+                                    <ion-col col-6>
+                                        <h3 text-right><b>{{totalFinal | currency}}</b></h3>
+                                    </ion-col>
+                                </ion-row>
+                            </ion-grid>
+                        </ion-card-content>
+                    </div>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <div *ngIf="record != true">
+        <div *ngIf="servicio.metodo_pago == 'Tarjeta'">
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-12>
+                        <div *ngIf="message != false">
+                            {{message}}
+                        </div>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-12>
+                        <button ion-button block color="orange" (click)="presentDeclineCode(servicio.cardId, servicio.clave, servicio.metodo_pago)" [disabled]="message == false">
+                            {{'PAYMENT.CHANGEPAY' | translate}}</button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+        <div *ngIf="servicio.metodo_pago == 'Efectivo'">
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-12 text-center>
+                        <b class="clave">
+                            {{'PAYMENT.PAY' | translate}}:
+                            <br><br>
+                            {{totalFinal | currency}}
+                        </b>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </div>
+    <div *ngIf=" record == true && servicio.estatus == 'Cancelado' ">
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12 text-center>
+                    <div *ngIf="(!servicio.motivo && !servicio.por)">
+                        <b class="_clave">
+                            Cancelado por Cliente
+                        </b>
+                    </div>
+                    <div *ngIf="(servicio.motivo && !servicio.por)">
+                        Motivo de cancelación: <b class="_clave">{{servicio.motivo}}</b>
+                        <br>
+                        <b>
+                            Cancelado por Repartidor
+                        </b>
+                    </div>
+                    <div *ngIf="(servicio.por)">
+                        Motivo de cancelación: <b class="_clave">{{servicio.motivo}}</b>
+                        <br>
+                        <b>
+                            Cancelado por Establecimiento
+                        </b>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>
+
+<div *ngIf="record == true">
+    <ion-footer no-border>
+        <ion-toolbar>
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-12>
+                        <div text-center>
+                            <div text-center>
+                                <button ion-button round block color="orange" round (click)="goBack()">Atras</button>
+                            </div>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-toolbar>
+    </ion-footer>
+</div>

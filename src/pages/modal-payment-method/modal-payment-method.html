@@ -1,0 +1,145 @@
+<ion-header no-border>
+
+    <ion-navbar color="orange">
+        <ion-grid >
+            <ion-row>
+                <ion-col col-2>
+                    <ion-buttons>
+                        <button ion-button icon-only (click)="goBack()">
+                            <ion-icon name="arrow-dropdown"></ion-icon>
+                        </button>
+                    </ion-buttons>
+                </ion-col>
+                <ion-col col-8>
+                    <div text-center>
+                        <ion-title>{{'MODALPAY.OPTIONSPAY' | translate}}</ion-title>
+                    </div>
+                </ion-col>
+                <ion-col col-2></ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-card >
+        <ion-list radio-group>
+            <ion-list-header>
+                <div text-left class="text-metodo">
+                    {{'MODALPAY.PAYMETHOD' | translate}}
+                </div>
+            </ion-list-header>
+            <div *ngIf="efectivo == true && tarjeta == true">
+                <div *ngFor="let card of cards">
+                    <ion-item>
+                        <ion-label id="type-card">
+                            <ion-grid>
+                                <ion-row>
+                                    <ion-col col-4>
+                                        <div *ngIf="card.cardType == 'Visa'">
+                                            <img src="assets/imgs/visa-pay-logo.png">
+                                        </div>
+                                        <div *ngIf="card.cardType == 'MasterCard'">
+                                            <img src="assets/imgs/master-card.png">
+                                        </div>
+                                        <div *ngIf="card.cardType == 'American Express'">
+                                            <img src="assets/imgs/amex.png">
+                                        </div>
+                                    </ion-col>
+                                    <ion-col col-4>
+                                        <b>{{card.cardLast4}}</b>
+                                    </ion-col>
+                                    <ion-col col-4></ion-col>
+                                </ion-row>
+                            </ion-grid>
+                        </ion-label>
+                        <ion-radio [value]="card.$key" [checked]="card.checked" (click)="saveType('Tarjeta', cardId, card.cardLast4, card.cardType, card.$key)">
+                        </ion-radio>
+                    </ion-item>
+                </div>
+                <ion-item>
+                    <ion-label id="type-money">
+                        <ion-grid>
+                            <ion-row>
+                                <ion-col col-4>
+                                    <div>
+                                        <img src="assets/imgs/money.png">
+                                    </div>
+                                </ion-col>
+                                <ion-col col-4 class="efectivo"> <b>{{'MODALPAY.CASH' | translate}}</b> </ion-col>
+                                <ion-col col-4 class="efectivo"></ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </ion-label>
+                    <ion-radio value="Efectivo" [checked]="checked" (click)="saveType('Efectivo', cardId, null, null)">
+                    </ion-radio>
+                </ion-item>
+            </div>
+            <div *ngIf="efectivo == true && tarjeta == false">
+                <ion-item>
+                    <ion-label id="type-money">
+                        <ion-grid>
+                            <ion-row>
+                                <ion-col col-4>
+                                    <div>
+                                        <img src="assets/imgs/money.png">
+                                    </div>
+                                </ion-col>
+                                <ion-col col-4 class="efectivo"> <b>{{'MODALPAY.CASH' | translate}}</b> </ion-col>
+                                <ion-col col-4 class="efectivo"></ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </ion-label>
+                    <ion-radio value="Efectivo" [checked]="checked" (click)="saveType('Efectivo', cardId, null, null)">
+                    </ion-radio>
+                </ion-item>
+            </div>
+            <div *ngIf="efectivo == false && tarjeta == true">
+                <div *ngFor="let card of cards">
+                    <ion-item>
+                        <ion-label id="type-card">
+                            <ion-grid>
+                                <ion-row>
+                                    <ion-col col-4>
+                                        <div *ngIf="card.cardType == 'Visa'">
+                                            <img src="assets/imgs/visa-pay-logo.png">
+                                        </div>
+                                        <div *ngIf="card.cardType == 'MasterCard'">
+                                            <img src="assets/imgs/master-card.png">
+                                        </div>
+                                        <div *ngIf="card.cardType == 'American Express'">
+                                            <img src="assets/imgs/amex.png">
+                                        </div>
+                                    </ion-col>
+                                    <ion-col col-4>
+                                        <b>{{card.cardLast4}}</b>
+                                    </ion-col>
+                                    <ion-col col-4></ion-col>
+                                </ion-row>
+                            </ion-grid>
+                        </ion-label>
+                        <ion-radio [value]="card.$key" [checked]="card.checked" (click)="saveType('Tarjeta', cardId, card.cardLast4, card.cardType, card.$key)">
+                        </ion-radio>
+                    </ion-item>
+                </div>
+            </div>
+        </ion-list>
+    </ion-card>
+    <ion-row>
+        <ion-col col-12>
+            <div *ngIf="efectivo == false || true && tarjeta == true">
+                <ion-fab center middless>
+                    <button ion-fab mini color="aceptar" (click)="addCard()">
+                        <ion-icon name="add"></ion-icon>
+                    </button>
+                </ion-fab>
+                <br><br>
+                <div id="masMetodos">
+                    {{'MODALPAY.ADDPAYMETHOD' | translate}}
+                </div>
+            </div>
+        </ion-col>
+    </ion-row>
+</ion-content>

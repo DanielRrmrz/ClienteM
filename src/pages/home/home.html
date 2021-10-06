@@ -1,0 +1,112 @@
+<ion-header no-border>
+
+    <ion-navbar color="orange" hideBackButton>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-2>
+                    <button ion-button menuToggle>
+                        <ion-icon name="menu"></ion-icon>
+                    </button>
+                </ion-col>
+                <ion-col col-8>
+                    <div text-center>
+                        <ion-title>TOC TOC</ion-title>
+                    </div>
+                </ion-col>
+                <ion-col col-2></ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content scrollbar-y-auto>
+    <div class="homeB">
+        <ion-slides *ngIf="banners && banners.length" autoplay="5000" loop="true" speed="500" class="background">
+            <ion-slide *ngFor="let banner of banners">
+                <div *ngIf="banner.url == undefined">
+                    <img [src]="banner.photourl">
+                </div>
+                <div *ngIf="banner.url != undefined">
+                    <div (click)="goToUrl(banner.url)">
+                        <img [src]="banner.photourl">
+                    </div>
+                </div>
+            </ion-slide>
+        </ion-slides>
+
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12>
+                    <div [hidden]="!(servicio == 'false')">
+                        <ion-card (click)="openPlace()">
+                            <ion-card-header class="fondo_1">
+                                <ion-grid>
+                                    <ion-row>
+                                        <ion-col col-4>
+                                            <div text-center>
+                                                <img class="logo animated fadeInDown" src="assets/imgs/logo-icon.png">
+                                            </div>
+                                        </ion-col>
+                                        <ion-col col-8>
+                                            <br>
+                                            <div text-center>
+                                                <b class="tex">{{'HOME.PQ' | translate}}</b>
+                                            </div>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-grid>
+                            </ion-card-header>
+                        </ion-card>
+                    </div>
+                    <div [hidden]="!(servicio == 'true')">
+                        <ion-card (click)="goToService()">
+                            <ion-card-header class="fondo_1">
+                                <ion-grid>
+                                    <ion-row>
+                                        <ion-col col-4>
+                                            <div text-center>
+                                                <img class="logo animated fadeInDown" src="assets/imgs/logo-icon.png">
+                                            </div>
+                                        </ion-col>
+                                        <ion-col col-8>
+                                            <br>
+                                            <div text-center>
+                                                <b class="tex">{{'HOME.PQ' | translate}}</b>
+                                            </div>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-grid>
+                            </ion-card-header>
+                        </ion-card>
+                    </div>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-12>
+                    <ion-card (click)="openRestaurante()">
+                        <ion-card-header class="fondo_2">
+                            <ion-grid>
+                                <ion-row>
+                                    <ion-col col-4>
+                                        <div text-center>
+                                            <img class="logo_a animated fadeInDown" src="assets/imgs/logo_azul.png">
+                                        </div>
+                                    </ion-col>
+                                    <ion-col col-6>
+                                        <br>
+                                        <div text-center>
+                                            <b class="tex">{{'HOME.ES' | translate}}</b>
+                                        </div>
+                                    </ion-col>
+                                </ion-row>
+                            </ion-grid>
+                        </ion-card-header>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+
+</ion-content>

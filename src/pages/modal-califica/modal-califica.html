@@ -1,0 +1,27 @@
+<ion-content class="main-view">
+    <div class="overlay"></div>
+    <div class="modal_content">
+        <img src="assets/imgs/logo-icon.png" class="imgRedonda">
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12 text-center>
+                    <div class="rating" (click)="Rating(rating)">
+                        <ionic3-star-rating activeIcon="star" defaultIcon="star-outline" activeColor="#E36485" defaultColor="#000000" readonly="false" [rating]="0">
+                        </ionic3-star-rating>
+                        {{'MODALSCORE.SCORE' | translate}}
+                    </div>
+                </ion-col>
+            </ion-row>
+            <ion-row [hidden]="!(comentario == 'show')">
+                <ion-col>
+                    <ion-input [(ngModel)]="comment" type="text" [placeholder]="_comment"></ion-input>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-12 text-center>
+                    <button ion-button color="orange" small full [disabled]="disable" (click)="saveRating(rating)"> {{'MODALSCORE.RATE' | translate}}</button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>

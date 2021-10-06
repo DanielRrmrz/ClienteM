@@ -1,0 +1,39 @@
+page-perfil {
+    .background {
+        height: 100%;
+        background-image: url('../assets/imgs/perfil.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: auto;
+        z-index: 1;
+        position: absolute;
+        .contents {
+            position: relative;
+            color: #fff;
+            h1 {
+                color: #E36485;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+        }
+    }
+    img {
+        width: 100px;
+        height: auto;
+        border-radius: 50%;
+        margin-top: 15%;
+        border: 2px solid rgb(255, 255, 255);
+        box-shadow: 1px 1px 10px 14px rgba(0, 0, 0, 0.5);
+        margin-bottom: 10%;
+    }
+    ion-fab {
+        margin-right: 8px;
+    }
+    ion-input {
+        border-bottom: 1px solid #E36485;
+    }
+}

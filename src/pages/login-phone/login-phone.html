@@ -1,0 +1,32 @@
+<ion-content>
+    <div class="background animated fadeInDown">
+        <div class="contents">
+            <ion-item>
+                <ion-label stacked>Número de teléfono</ion-label>
+                <ion-input type="tel" maxlength="10" [(ngModel)]="phoneNumber" placeholder="555 - 555 - 5555" (ionChange)="phone_Disable()"></ion-input>
+            </ion-item>
+
+            <div text-center>
+                <button ion-button id="sign-in-button" color="orange" (click)="signIn(phoneNumber)" [disabled]=phoneDisable>
+                    Iniciar sesión
+                </button>
+            </div>
+
+            <div id="recaptcha-container"></div>
+        </div>
+    </div>
+</ion-content>
+
+<ion-footer no-border>
+    <ion-toolbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12>
+                    <div text-center>
+                        <button ion-button round block color="orange" (click)="(goBack())">Atras</button>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-footer>

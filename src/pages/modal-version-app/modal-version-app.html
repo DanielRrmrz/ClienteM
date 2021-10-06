@@ -1,0 +1,25 @@
+<ion-content class="main-view">
+    <div class="overlay"></div>
+    <div class="modal_content">
+        <div text-wrap text-center class="app">
+            <h2>
+                Actuliza tu aplicación
+            </h2>
+        </div>
+        <hr>
+        <div text-wrap text-center class="version">
+            <h5>
+                Para seguir usando TOC TOC, <br> descarga la última versión.
+            </h5>
+        </div>
+
+        <div [hidden]="(plt == 'ios')">
+            <button ion-button full color="orange" (click)="android()">Aceptar</button>
+        </div>
+        <div [hidden]="(plt == 'android')">
+            <button ion-button full color="orange" (click)="ios()">Aceptar</button>
+        </div>
+
+    </div>
+
+</ion-content>

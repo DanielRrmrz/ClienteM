@@ -1,0 +1,65 @@
+<ion-header>
+    <ion-navbar color="orange">
+        <ion-grid>
+            <ion-row>
+                <ion-col col-2>
+                    <button ion-button menuToggle>
+                    <ion-icon name="menu"></ion-icon>
+                </button>
+                </ion-col>
+                <ion-col col-8>
+                    <div text-center>
+                        <ion-title>{{'SIDEBAR_List.PROF' | translate}}</ion-title>
+                    </div>
+                </ion-col>
+                <ion-col col-2></ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div class="background">
+        <div class="contents">
+            <ion-grid>
+                <ion-row>
+                    <ion-col text-center>
+                        <img [src]="user.photo">
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col >
+                        <ion-card >
+                            <ion-fab top right edge>
+                                <button ion-fab color="orange" (click)="disbled()"> <ion-icon name="create"></ion-icon></button>
+                            </ion-fab>
+                            <form [formGroup]="_formPerfil" (ngSubmit)="updatePerfil()">
+                                <ion-list>
+                                    <ion-item>
+                                        <ion-label stacked>{{'USER_INFORMATION.USERNAME' | translate}}:</ion-label>
+                                        <ion-input formControlName="username" [(ngModel)]="user.username" type="text" [placeholder]="username_" [disabled]="formDisabled"></ion-input>
+                                    </ion-item>
+                                    <ion-item>
+                                        <ion-label stacked>{{'USER_INFORMATION.LASTNAME' | translate}}:</ion-label>
+                                        <ion-input formControlName="lastname" [(ngModel)]="user.lastname" type="text" [placeholder]="lastname_" [disabled]="formDisabled"></ion-input>
+                                    </ion-item>
+                                    <!-- <ion-item>
+                                        <ion-label stacked>{{'USER_INFORMATION.EMAIL' | translate}}:</ion-label>
+                                        <ion-input formControlName="email" [(ngModel)]="user.email" type="email" [placeholder]="email_" [disabled]="formDisabled"></ion-input>
+                                    </ion-item> -->
+                                    <ion-item>
+                                        <ion-label stacked>{{'USER_INFORMATION.PHONE' | translate}}:</ion-label>
+                                        <ion-input formControlName="phone" [(ngModel)]="user.phone" type="phone" [placeholder]="phone_" [disabled]="formDisabled"></ion-input>
+                                    </ion-item>
+                                </ion-list>
+                                <div *ngIf="formDisabled == false" padding>
+                                    <button ion-button block color="orange" type="submit" [disabled]="!_formPerfil.valid">{{'PROFILE.UPDATEPROFILE_' | translate}}</button>
+                                </div>
+                            </form>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </div>
+</ion-content>

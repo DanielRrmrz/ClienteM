@@ -1,0 +1,65 @@
+<!-- 
+  - @author    Ionic Bucket <ionicbucket@gmail.com>
+  - @copyright Copyright (c) 2017
+  - @license   Fulcrumy
+-->
+<!-- Contact Us Page -->
+
+<ion-header no-border>
+  <ion-navbar color="orange" hideBackButton>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'CONTACTUS.TITLE' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div text-center>
+    <p class="contact-title">CONTACT US</p>
+    <p class="contact-subtitle">FEEL FREE TO DROP US A MESSAGE!</p>
+  </div>
+  <div class="contact-box">
+    <form novalidate>
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+
+            <!-- User Name -->
+            <ion-item>
+              <ion-label>
+                <ion-icon color="orange" name="md-person"></ion-icon>
+              </ion-label>
+              <ion-input type="text" class="ion-ios-locked-outline" placeholder="Your Name*">
+              </ion-input>
+            </ion-item>
+
+            <!-- Email -->
+            <ion-item>
+              <ion-label>
+                <ion-icon color="orange" name="md-mail"></ion-icon>
+              </ion-label>
+              <ion-input type="email" class="ion-ios-locked-outline" placeholder="Your Email*">
+              </ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>
+                <ion-icon color="orange" name="chatbubbles"></ion-icon>
+              </ion-label>
+              <ion-textarea placeholder="Your Message*" rows="3">
+              </ion-textarea>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <button ion-button full round color="orange">Send</button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </div>
+</ion-content>

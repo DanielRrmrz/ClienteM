@@ -1,0 +1,41 @@
+page-modal-payment-method {
+    .text-metodo {
+        font-size: inherit;
+        color: silver;
+        font-weight: 500;
+    }
+    #masMetodos {
+        text-align: center;
+        margin-top: 8%;
+        font-size: 1.2rem;
+    }
+    .toolbar-title {
+        overflow: visible;
+        text-overflow: clip;
+    }
+    .toolbar-title-md {
+        padding: 6px 12px;
+    }
+    .toolbar-ios ion-title {
+        padding: 0px 0px 0px;
+    }
+    #type-card {
+        max-width: 44%;
+    }
+    #type-money {
+        max-width: 44%;
+    }
+    .circuloCard {
+        width: 5px;
+        height: 5px;
+        margin-top: 8px;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        background: #E36485;
+    }
+    .efectivo {
+        padding: 0%;
+        margin-top: 3%;
+    }
+}

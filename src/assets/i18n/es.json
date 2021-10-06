@@ -1,0 +1,382 @@
+{
+    "LANGUAGE": "Spanish Language",
+    "SIDEBAR_List": {
+        "HOME": "Inicio",
+        "SERV": "Servicios",
+        "PROF": "Perfil",
+        "LOGOUT": "Cerrar Sesión",
+        "HELP": "¿Necesitas Ayuda?",
+        "CONTACT": "Contáctanos",
+        "RNA": "Registra tu negocio aquí"
+    },
+    "LANGUAGES": [{
+            "ID": "en",
+            "VALUE": "Inglés"
+        },
+        {
+            "ID": "es",
+            "VALUE": "Español"
+        }
+    ],
+    "FIRST_LANDING_PAGE": {
+        "LANGUAGE": "Lenguage",
+        "CANCEL": "Cancelar",
+        "OK": "Aceptar",
+        "LOGIN": "Inicia sesión",
+        "SIGNUP": "Registrate",
+        "GUEST": "Ingresa como invitado",
+        "INORDER1": "Para poder hacer uso de nuestra aplicación",
+        "INORDER2": "brindandote un mejor servicio, ",
+        "INORDER3": "es necesario crear una cuenta"
+    },
+    "LOGIN_EMAIL": {
+        "EMAIL": "Correo electrónico",
+        "PASSWORD": "Contraseña",
+        "LOGIN": "Inicia sesión",
+        "RESETPASSWORD": "Restablecer mi contraseña.",
+        "PASSWORDRESET": "Te enviaremos un correo con un link para restablecer tu contraseña.",
+        "ICRPASS": "Contraseña incorrecta",
+        "INVALIDEMAIL": "Correo inválido",
+        "USERNOTFOUND": "Usuario no encontrado intenta de nuevo o registrate",
+        "LOGGIN": "Iniciando sesión",
+        "ENTER": "Entrar",
+        "BACK": "Atrás"
+    },
+    "LOGIN_REGISTRO": {
+        "SIGNUP": "Registrate",
+        "EMAIL": "Correo electrónico",
+        "PASSWORD": "Contraseña",
+        "EMAILREGISTER": "Este correo ya esta registrado",
+        "PASSWORDSIX": "La contraseña debe tener al menos 6 caracteres",
+        "REQUIRED": "Todos los campos son requeridos",
+        "NEWUSER": "Creando cuenta",
+        "BACK": "Atrás",
+        "SIGNUP_": "Registrarte",
+        "EMAILIRT": "Correo electrónico incorrecto o incompleto"
+    },
+    "LOGIN": {
+        "SOCIALNET": "Conéctate con facebook",
+        "PERSONALDATA": "Completa tus datos",
+        "CONECT": "Conectando",
+        "ERRCONECT": "Error al conectar a Facebook",
+        "TRY": "Por favor intente de nuevo"
+    },
+    "USER_INFORMATION": {
+        "TITLE": "Tu información",
+        "WELCOME": "Bienvenido a TOC TOC",
+        "SUBTITLE": "Da tu información",
+        "BUTTON": "IR",
+        "USERNAME": "Nombres*",
+        "LASTNAME": "Apellidos*",
+        "EMAIL": "Correo electrónico*",
+        "PHONE": "Número de Teléfono*",
+        "CITY": "Ciudad*",
+        "REQUIRED": "Este campo es requerido",
+        "EMAILIRT": "El email no es válido ",
+        "UPDATEINFO": "Actualiza tu información",
+        "TITLE_": "Intente de nuevo",
+        "SUBTITLE_": "Error al actualiza tu información",
+        "OK": "Aceptar",
+        "TER": "Leer Términos y condiciones",
+        "PRI": "Leer Aviso de privacidad",
+        "ACCEPT": "Aceptar Términos y condiciones",
+        "ACCEPTT": "y Aviso de privacidad"
+
+    },
+    "HOME": {
+        "PQ": "Pide lo que quieras",
+        "ES": "Establecimientos",
+        "PO": "¿Usted tiene un pedido pendiente. Desea continuar con el servicio?"
+    },
+    "PLACE": {
+        "DC": "¿Dónde lo compramos?",
+        "PQ": "Ó Pide lo que quieras  de donde quieras",
+        "INPUT1": "¿Nombre del establecimiento?",
+        "INPUT2": "Dirección, sucursal, colonia",
+        "LOADING": "Cargando",
+        "DELETE": "Eliminar",
+        "UPDATE": "Modificar",
+        "ADDP": "Agregar producto",
+        "DELETEPROD": "Producto eliminado",
+        "DELETENOTPRO": "Producto no eliminado",
+        "TRY": "Por favor intente de nuevo"
+    },
+    "MODPRODUCT": {
+        "WHATDO": "¿Que compramos?",
+        "QT": "Cantidad",
+        "PROD": "Producto",
+        "DES": "Extras descripcion",
+        "ADDPRO": "Producto agregado",
+        "NOTADDPRO": "Producto no agregado",
+        "TRY": "Por favor intente de nuevo",
+        "TITLE_": "Producto no actualizado",
+        "SUBTITLE_": "Inteta de nuevo",
+        "UPDATEPRO": "Producto actualizado"
+    },
+    "SERV": {
+        "ADDSPOT": "Agregar otro lugar",
+        "CANCELP": "¿Está seguro que desea cancelar tú pedido?",
+        "AMOUNT": "Se cobrara la cantidad de $15.00 por cada lugar adicional. ¿Deseas continuar?",
+        "DELETEP": "¿Quieres eliminar este pedido?"
+
+    },
+    "SUMMARY": {
+        "SUMMARY": "Resumen",
+        "DC": "Dónde lo compramos",
+        "AD": "¿A dónde lo llevamos?",
+        "SELECTV": "Seleccionar vehiculo",
+        "MP": "Metodo de pago",
+        "SETP": "Cambiar metodo de pago",
+        "CP": "Confirmar pedido",
+        "CASH": "Efectivo",
+        "TIP": "El pago con tarjeta no incluye propina",
+        "COMM": "Se cobrará comisión  por pago con tarjeta",
+        "TYPETRAN": "<div text-center>Porfavor eliga su tipo de transporte</div>",
+        "TYPEPAYM": "<div text-center>Porfavor eliga su método de pago</div>",
+        "CARDPAYM": "<div text-center>Sólo se aceptan pagos en Tarjeta</div>",
+        "CASHPAYM": "<div text-center>Sólo se aceptan pagos en Efectivo</div>"
+    },
+    "MODALPAY": {
+        "OPTIONSPAY": "Opciones de pago",
+        "PAYMETHOD": "Método de pago",
+        "ADDPAYMETHOD": "Agregar método de pago",
+        "CASH": "Efectivo",
+        "CARDNUM": "Número de tarjeta",
+        "CARDINVALID": "Ingresa un número de tarjeta válido",
+        "DATEINVALID": "Ingresa una fecha de vencimiento válida",
+        "CODEINVALID": "Ingresa un código de tarjeta válido",
+        "GOODCARD": "Tarjeta registrada con éxito"
+    },
+    "MAPPAGE": {
+        "LOCATION": "Mi ubicación",
+        "READY": "Listo!",
+        "FLAT": "Piso, Oficina, Apartamento"
+    },
+    "DELIVERY": {
+        "SEARCH": "Buscando repartidor",
+        "SERVICE": "Solicitando servicio",
+        "ESTIMATED": "Buscando repartidor."
+    },
+    "DELIVERY_TRACKING": {
+        "TITLE": "Rastrea tu orden",
+        "GUY": "es tu repartidor.",
+        "ONHIS": "se dirige por tu pedido",
+        "HEBUYING": "esta comprando tu pedido",
+        "JUST": "ha comprado tu pedido",
+        "ARRIVED": "he arrived with your order",
+        "OUTSIDE": "ha llegado con tu pedido",
+        "SERVICECONF": "Servicio Confirmado",
+        "GOINGTO": "Dirigiéndose al establecimiento",
+        "BUYING": "Comprando",
+        "TRAKING": "Llevandolo",
+        "_OUTSIDE": "En puerta",
+        "SERVICE": "Servicio",
+        "ORDER": "ha aceptado tu pedido",
+        "ORDERP": "está preparando tu pedido",
+        "WAY": "Esta en camino con tu pedido.",
+        "CONFIRMORDER": "Pedido Confirmado",
+        "PREPARINGORDER": "Preparando pedido"
+
+    },
+    "PAYMENT": {
+        "PAYSUMM": "Resumen de pago",
+        "SERVICE": "Servicio",
+        "TOTAL": "Total",
+        "TICKET": "Recibo del pedido",
+        "PRODUCTS": "Total del pedido",
+        "SERVICEFEE": "Costo del servicio",
+        "SPOTS": "Establecimientos adicionales",
+        "COMMISSION": "Comisión",
+        "CARDPAYMENT": "pago tarjeta",
+        "TOTAL_": "TOTAL",
+        "CHANGEPAY": "Cambiar forma de pago",
+        "PAY": "Por favor paga a nuestro repartidor el monto de"
+    },
+    "MODALSCORE": {
+        "SCORE": "Calificación",
+        "RATE": "Calificar",
+        "COMMENT": "Dejar un comentario"
+    },
+    "MESSAGE": {
+        "MESSAGE": "Mensaje"
+    },
+    "FOOD_ITEMS": {
+        "TITLE": "Artículos"
+    },
+    "FOOD_CATEGORIES": {
+        "SERVICECON": "No se puede continuar con el servicio. El establecimiento ya se encuentra cerrado"
+    },
+    "FOOD_CATEGORIES_ITEMS": {
+        "REMEMBER": "Recuerde que sólo puede elegir productos de un solo establecimiento. ¿Desea salir a otra sucursal?",
+        "SEARCH": "Buscar producto",
+        "LOADING": "Cargando"
+    },
+    "FOOD_ITEMS_DETAILS": {
+        "PRODUCT": "Producto",
+        "BUTTON": "Añadir a la cesta",
+        "NOTE": "Nota para el establecimiento",
+        "ADDPRODUCT": "Agregando producto a la cesta",
+        "ALREADY": "ya se encuentra en su carrito de compras",
+        "TRYP": "Intente agregar su producto de nuevo",
+        "REMEMBER": "Recuerde que sólo puede elegir productos de una sola sucursal. Actualmente el carrito tiene productos de otra sucursal",
+        "GOTO": "Ir al carrito",
+        "NEW": "Crear Nuevo",
+        "ADDP": "Agregar producto",
+        "CART": "se ha agregado correctamente en su carrito de compras"
+    },
+    "CART": {
+        "TITLE": "Su pedido",
+        "BUTTON": "Continuar",
+        "NOPRODUCTS": "Aún no se han agregado productos al carrito",
+        "MORE": " MÁS COSTO DEL ENVIO (VARÍA DE LOS $33.5 MXN A $80 MXN, DEPENDERÁ DE DOS FACTORES TIEMPO Y KILOMETRAJE).",
+        "THESUG": "El consumo sugerido es mayor a",
+        "TRY": "Por favor intente de nuevo",
+        "DELETEP": "Producto eliminado",
+        "NODELETE": "Producto no eliminado",
+        "CANNOT": "No se puede dejar el carrito sin productos. Para eliminar todos los productos debe cancelar el carrito",
+        "SURE": "¿Está seguro que desea cancelar el carrito?"
+
+
+    },
+    "UPDATECART": {
+        "UPDATE": "Modificar",
+        "UPDATEORDER": "Modificar Pedido"
+    },
+    "RESETPASS": {
+        "RESET": "Restablecer",
+        "OK": "Aceptar"
+    },
+    "PROFILE": {
+        "UPDATEPROFILE": "Tus perfil fue actualizado",
+        "ERRORPROFILE": "Ocurrio un problema al actualizar tu perfil intenta de nuevo",
+        "UPDATEPROFILE_": "Actulizar perfil"
+    },
+    "BOTTONS": {
+        "BACK": "Atrás",
+        "CONTINUE": "Continuar",
+        "CANCEL": "Cancelar",
+        "SAVE": "Guardar",
+        "DELETE": "Eliminar",
+        "UPDATE": "Modificar",
+        "OK": "Aceptar",
+        "YES": "Sí",
+        "NO": "No"
+    },
+
+    "repartidor": [{
+            "undefined": "1",
+            "Espanñol": "servicio",
+            "Ingles": "service"
+        },
+        {
+            "undefined": "2",
+            "Espanñol": "cliente y direccion",
+            "Ingles": "client and addres"
+        },
+        {
+            "undefined": "3",
+            "Espanñol": "metodo de pago",
+            "Ingles": "paid method"
+        },
+        {
+            "undefined": "4",
+            "Espanñol": "mapa",
+            "Ingles": "map"
+        },
+        {
+            "undefined": "5",
+            "Espanñol": "cancelar",
+            "Ingles": "cancel"
+        },
+        {
+            "undefined": "6",
+            "Espanñol": "dirigiendose por el pedido",
+            "Ingles": "on his way"
+        },
+        {
+            "undefined": "7",
+            "Espanñol": "comprando",
+            "Ingles": "buying"
+        },
+        {
+            "undefined": "8",
+            "Espanñol": "comprado",
+            "Ingles": "bought"
+        },
+        {
+            "undefined": "9",
+            "Espanñol": "en puerta ",
+            "Ingles": "outside"
+        },
+        {
+            "undefined": "10",
+            "Espanñol": "camara",
+            "Ingles": "camera"
+        },
+        {
+            "undefined": "11",
+            "Espanñol": "cerrar",
+            "Ingles": "close"
+        },
+        {
+            "undefined": "12",
+            "Espanñol": "cantidad",
+            "Ingles": "quantity"
+        },
+        {
+            "undefined": "13",
+            "Espanñol": "monto",
+            "Ingles": "how much ?"
+        },
+        {
+            "undefined": "14",
+            "Espanñol": "ingresar el total del ticket",
+            "Ingles": "total ticket"
+        },
+        {
+            "undefined": "15",
+            "Espanñol": "realizar cobro",
+            "Ingles": "make the charge"
+        },
+        {
+            "undefined": "16",
+            "Espanñol": "Metodo de pago",
+            "Ingles": "paid method"
+        },
+        {
+            "undefined": "17",
+            "Espanñol": "recibo del pedido",
+            "Ingles": "ticket"
+        },
+        {
+            "undefined": "18",
+            "Espanñol": "total del pedido",
+            "Ingles": "products"
+        },
+        {
+            "undefined": "19",
+            "Espanñol": "costo del servicio",
+            "Ingles": "service fee"
+        },
+        {
+            "undefined": "20",
+            "Espanñol": "establecimientos adicionales",
+            "Ingles": "aditional spots"
+        },
+        {
+            "undefined": "21",
+            "Espanñol": "total",
+            "Ingles": "total"
+        },
+        {
+            "undefined": "22",
+            "Espanñol": "finalizar servicio",
+            "Ingles": "end service"
+        },
+        {
+            "undefined": "23",
+            "Espanñol": "servicio completado",
+            "Ingles": "service completed"
+        }
+    ]
+}

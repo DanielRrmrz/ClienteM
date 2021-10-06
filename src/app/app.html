@@ -1,0 +1,82 @@
+<ion-menu id="myMenu" [content]="content" *ngIf="this.platform.dir()==='ltr'" side="left">
+    <ion-header no-border>
+        <ion-toolbar>
+            <img class="logo animated fadeInDown" src="assets/imgs/logo_mini.png">
+        </ion-toolbar>
+    </ion-header>
+    <!-- Side Menu Content Options -->
+    <ion-content>
+        <ion-list no-lines>
+            <ion-item menuClose (click)="openPage('HomePage')">
+                <ion-icon ion-text color="ash" name="home" item-left></ion-icon>
+                <span ion-text color="ash">{{'SIDEBAR_List.HOME' | translate}}</span>
+            </ion-item>
+            <ion-item menuClose (click)="openPage('ServiceRecordPage')">
+                <ion-icon ion-text color="ash" name="filing" item-left></ion-icon>
+                <span ion-text color="ash">{{'SIDEBAR_List.SERV' | translate}}</span>
+            </ion-item>
+            <ion-item menuClose (click)="openPage('PerfilPage')">
+                <ion-icon ion-text color="ash" name="person" item-left></ion-icon>
+                <span ion-text color="ash">{{'SIDEBAR_List.PROF' | translate}} </span>
+            </ion-item>         
+        </ion-list>
+        <div text-center (click)="alertContact()">
+            <h6>
+                <span ion-text color="ash">{{'SIDEBAR_List.HELP' | translate}}</span>
+                <ion-badge color="dark"> {{'SIDEBAR_List.CONTACT' | translate}} </ion-badge>
+            </h6>
+        </div>
+        <div text-center (click)="irTerminos()"><!--Tibe-->
+            <h6>
+                <ion-icon iont-text color="ash" name="alert" item-left></ion-icon>
+                <span STYLE="text-decoration:underline" ion-text color="ash">{{'USER_INFORMATION.TER' | translate}}</span>
+            </h6>
+        </div>
+        <ion-footer no-border>
+            <ion-list no-lines>
+                <ion-item menuClose (click)="alertLogout()"> <!--Tibe-->
+                    <ion-icon ion-text color="ash" name="power" item-left></ion-icon>
+                    <span ion-text color="ash">{{'SIDEBAR_List.LOGOUT' | translate}}</span>
+                </ion-item>
+            </ion-list>
+        </ion-footer>
+    </ion-content>
+</ion-menu>
+
+<ion-menu [content]="content" *ngIf="this.platform.dir()!=='ltr'" side="right">
+    <ion-header>
+        <ion-toolbar>
+            <img class="logo animated fadeInDown" src="assets/imgs/logo-icon.png">
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+        <ion-list no-lines>
+            <ion-item menuClose (click)="openPage('HomePage')">
+                <ion-icon ion-text color="ash" name="home" item-left></ion-icon>
+                <span ion-text color="ash">{{'SIDEBAR_List.HOME' | translate}}</span>
+            </ion-item>
+            <ion-item menuClose (click)="openPage('ServiceRecordPage')">
+                <ion-icon ion-text color="ash" name="filing" item-left></ion-icon>
+                <span ion-text color="ash">{{'SIDEBAR_List.SERV' | translate}}</span>
+            </ion-item>
+            <ion-item menuClose (click)="openPage('PerfilPage')">
+                <ion-icon ion-text color="ash" name="person" item-left></ion-icon>
+                <span ion-text color="ash">{{'SIDEBAR_List.PROF' | translate}}</span>
+            </ion-item>
+        </ion-list>
+
+        <ion-footer>
+            <ion-list no-lines>
+                <ion-item menuClose (click)="Salir()">
+                    <ion-icon ion-text color="ash" name="power" item-left></ion-icon>
+                    <span ion-text color="ash">{{'SIDEBAR_List.LOGOUT' | translate}}</span>
+                </ion-item>
+            </ion-list>
+        </ion-footer>
+    </ion-content>
+</ion-menu>
+
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

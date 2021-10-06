@@ -1,0 +1,65 @@
+page-first-landing {
+    .background {
+        height: 100%;
+        background-image: url('../assets/imgs/landing-page_.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: auto;
+        z-index: 1;
+        position: absolute;
+        .contents {
+            position: relative;
+            top: 5rem;
+            color: #fff;
+            h1 {
+                color: #E36485;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+        }
+    }
+    .toolbar-title {
+        overflow: visible;
+        text-overflow: clip;
+    }
+    .toolbar-title-md {
+        padding: 6px 12px;
+    }
+    .footer {
+        color: #E36485;
+        font-weight: bold;
+    }
+    .buttons {
+        width: 28rem !important;
+        height: 4rem !important;
+    }
+    .logo {
+        width: 100%;
+        height: auto;
+    }
+    .imgRedonda {
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+    }
+    ion-content {
+        background-color: color($colors, light)!important;
+    }
+    ion-card {
+        height: 34rem !important;
+        display: flex;
+        flex-direction: column;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+    .colorH6 {
+        color: black;
+    }
+    .card-first {
+        height: 38rem !important;
+    }
+}

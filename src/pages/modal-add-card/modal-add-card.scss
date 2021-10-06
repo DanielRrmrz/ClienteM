@@ -1,0 +1,25 @@
+page-modal-add-card {
+    .toolbar-title {
+        overflow: visible;
+        text-overflow: clip;
+    }
+    .toolbar-title-md {
+        padding: 6px 12px;
+    }
+    .toolbar-ios ion-title {
+        padding: 0px 0px 0px;
+    }
+    #type-card {
+        max-width: 15%;
+        margin-top: 0%;
+        margin-left: 0%;
+        margin-right: 0%;
+        margin: 0%;
+    }
+    #texto {
+        color: #ef1302;
+    }
+    .item-md {
+        padding-left: 0px;
+    }
+}

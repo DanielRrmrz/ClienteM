@@ -1,0 +1,91 @@
+<ion-header no-border>
+    <ion-navbar color="orange" hideBackButton>
+        <div text-center>
+            <ion-title>{{categoria.nombre}}</ion-title>
+        </div>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div class="background">
+        <ion-content class="card-background-page">
+            <ion-card class="card_name">
+                <img [src]="categoria.imagen" />
+                <div class="card-title">
+                    <div class="page-title">
+                        <h1>{{categoria.nombre}}</h1>
+                    </div>
+                </div>
+            </ion-card>
+        </ion-content>
+    </div>
+    <ion-list>
+        <div *ngFor="let user of restaurantes">
+            <div *ngIf="user.activo == true">
+                <ion-item class="animated bounceInLeft" (click)="gotoCategoryItemList(user.uid, uidCategoria, user.hora_cerrar)">
+                    <ion-thumbnail item-start>
+                        <img [src]="user.photourl">
+                    </ion-thumbnail>
+                    <h2>{{user.username}}</h2>
+                </ion-item>
+            </div>
+        </div>
+        <!--Esto estaba Fijo en la plantilla-->
+        <!-- <ion-item class="animated bounceInRight" (click)="gotoCategoryItemList('CHINESS')">
+            <ion-thumbnail item-start>
+                <img src="assets/imgs/CHINESS.png">
+            </ion-thumbnail>
+            <h2>{{'FOOD_CATEGORIES.CHINESS' | translate}}</h2>
+        </ion-item>
+        <ion-item class="animated bounceInLeft" (click)="gotoCategoryItemList('COFFEE')">
+            <ion-thumbnail item-start>
+                <img src="assets/imgs/COFFEE.png">
+            </ion-thumbnail>
+            <h2>{{'FOOD_CATEGORIES.COFFEE' | translate}}</h2>
+        </ion-item>
+        <ion-item class="animated bounceInRight" (click)="gotoCategoryItemList('DESSERTS')">
+            <ion-thumbnail item-start>
+                <img src="assets/imgs/DESSERTS.png">
+            </ion-thumbnail>
+            <h2>{{'FOOD_CATEGORIES.DESSERTS' | translate}}</h2>
+        </ion-item>
+        <ion-item class="animated bounceInLeft" (click)="gotoCategoryItemList('ICECREAMS')">
+            <ion-thumbnail item-start>
+                <img src="assets/imgs/ICECREAMS.png">
+            </ion-thumbnail>
+            <h2>{{'FOOD_CATEGORIES.ICECREAMS' | translate}}</h2>
+        </ion-item>
+        <ion-item class="animated bounceInRight" (click)="gotoCategoryItemList('PIZZA')">
+            <ion-thumbnail item-start>
+                <img src="assets/imgs/PIZZA.png">
+            </ion-thumbnail>
+            <h2>{{'FOOD_CATEGORIES.PIZZA' | translate}}</h2>
+        </ion-item>
+        <ion-item class="animated bounceInLeft" (click)="gotoCategoryItemList('SALADS')">
+            <ion-thumbnail item-start>
+                <img src="assets/imgs/SALADS.png">
+            </ion-thumbnail>
+            <h2>{{'FOOD_CATEGORIES.SALADS' | translate}}</h2>
+        </ion-item>
+        <ion-item class="animated bounceInRight" (click)="gotoCategoryItemList('SNACKS')">
+            <ion-thumbnail item-start>
+                <img src="assets/imgs/SNACKS.png">
+            </ion-thumbnail>
+            <h2>{{'FOOD_CATEGORIES.SNACKS' | translate}}</h2>
+        </ion-item> -->
+    </ion-list>
+</ion-content>
+
+<ion-footer no-border>
+    <ion-toolbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12>
+                    <div text-center>
+                        <button ion-button round block color="orange" (click)="(goBack())">{{'BOTTONS.BACK' | translate}}</button>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-footer>

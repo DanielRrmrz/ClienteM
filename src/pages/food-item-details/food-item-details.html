@@ -1,0 +1,79 @@
+<ion-header no-border>
+    <ion-navbar color="orange">
+        <ion-grid>
+            <ion-row>
+                <ion-col col-10>
+                    <div text-center class="tituloP">
+                        <ion-title>{{'FOOD_ITEMS_DETAILS.PRODUCT' | translate}}</ion-title>
+                    </div>
+                </ion-col>
+                <ion-col col-2 id="carrito">
+                    <ion-buttons end>
+                        <button ion-button id="carrito" icon-only (click)="gotoCartPage()">
+                            <ion-icon name="cart"></ion-icon>
+                            <div *ngIf="total!=null; else other_content">
+                                <ion-badge item-end class="carrito_numero">{{total}}</ion-badge>
+                            </div>
+                            <ng-template #other_content>
+                                <ion-badge item-end class="carrito_numero">0</ion-badge>
+                            </ng-template>
+                        </button> &nbsp;&nbsp;
+                    </ion-buttons>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list text-center padding>
+        <img class="imgDetalle" [src]="detalles.photourl">
+        <h2>{{detalles.nombre}}</h2>
+        <ion-badge color="orange" item-center>{{detalles.precio | currency}}</ion-badge>
+        <p>{{detalles.descripcion}}</p>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-2></ion-col>
+                <ion-col col-2>
+                    <button ion-button round class='qtyminus' color="orange" (click)="decrement()">
+            <ion-icon name="remove"></ion-icon>
+         </button>
+                </ion-col>
+                <ion-col col-4>
+                    <!-- <ion-input type='number' name='quantity' text-center value="{{currentNumber}}" class='qty'></ion-input> -->
+                    <div class="caja">
+                        <span>{{currentNumber}}</span>
+                    </div>
+                </ion-col>
+                <ion-col col-2>
+                    <button ion-button round class='qtyminus' color="orange" (click)="increment()">
+                        <ion-icon name="add"></ion-icon>
+                    </button>
+                </ion-col>
+                <ion-col col-2></ion-col>
+            </ion-row>
+            <ion-row>
+                <textarea [(ngModel)]="nota" [placeholder]="NOTE" class="tex2"></textarea>
+            </ion-row>
+        </ion-grid>
+    </ion-list>
+</ion-content>
+
+<ion-footer no-border>
+    <ion-toolbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-6>
+                    <div text-center>
+                        <button ion-button round block color="orange" (click)="(goBack())">{{'BOTTONS.BACK' | translate}}</button>
+                    </div>
+                </ion-col>
+                <ion-col col-6>
+                    <div text-center>
+                        <button ion-button full round color="orange" (click)="agregar_producto(producto, currentNumber, detalles.photourl, detalles.nombre, detalles.precio)" [disabled]="currentNumber<=0">{{'FOOD_ITEMS_DETAILS.BUTTON' | translate}}</button>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-footer>

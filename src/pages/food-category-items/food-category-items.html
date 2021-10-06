@@ -1,0 +1,119 @@
+<ion-header no-border>
+    <ion-navbar color="orange" hideBackButton>
+        <div text-center>
+            <ion-title>{{'FOOD_ITEMS.TITLE' | translate}}</ion-title>
+        </div>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div class="background">
+        <ion-content class="card-background-page">
+            <ion-card class="card_name" >
+                <img [src]="categoria.imagen" />
+                <div class="card-title">
+                    <div class="page-title">
+                        <h1>{{restaurante.username}}</h1>
+                    </div>
+                </div>
+            </ion-card>
+        </ion-content>
+    </div>
+    <ion-searchbar  [animated]="true" [placeholder]='SEARCH' (ionInput)="getItems($event)" ></ion-searchbar>
+    <!-- Aquí iniciaba el listado de los productos fijos-->
+
+    <!-- <ion-list padding>
+
+        <ion-item class="animated bounceInLeft" text-wrap *ngFor="let item of foodItems; let i = index">
+
+            <ion-thumbnail item-start (click)="gotoItemDetails()">
+                <img src="assets/imgs/{{categoryName}}.png">
+            </ion-thumbnail>
+
+            <h2 (click)="gotoItemDetails()">{{'FOOD_ITEMS.'+ categoryName + '.' + i + '.NAME' | translate}}</h2>
+            <p (click)="gotoItemDetails()">{{'FOOD_ITEMS.'+ categoryName + '.' + i + '.DESCRIPTION' | translate}}</p>
+            <ion-badge item-end color="orange">{{'FOOD_ITEMS.'+ categoryName + '.' + i + '.PRICE' | translate}}</ion-badge>
+
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-2>
+                        <button ion-button clear item-end color="orange" [disabled]="!foodItems[i].quantity" (click)="minusQuantity(item, i)">
+              <ion-icon name="remove" style="zoom:1.8;"></ion-icon>
+            </button>
+                    </ion-col>
+                    <ion-col col-2 padding-top text-center>
+                        <span>{{foodItems[i].quantity}}</span>
+                    </ion-col>
+                    <ion-col col-2>
+                        <button ion-button clear item-end color="orange" (click)="addQuantity(item, i)">
+              <ion-icon name="add" style="zoom:1.8;"></ion-icon>
+            </button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+    </ion-list> -->
+
+    <ion-list>
+        <ion-item class="animated bounceInLeft" text-wrap *ngFor="let item of itemsFood; let i = index" (click)="gotoItemDetails(item.$key); savePedido(latitud, longitud, restaurante.address, restaurante.username);">
+
+            <ion-thumbnail item-start>
+                <img [src]="item.photourl">
+            </ion-thumbnail>
+            <h2>{{item.nombre}}</h2>
+            <ion-badge item-end color="orange">{{item.precio | currency}}</ion-badge>
+
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-2>
+                        <!-- <button ion-button clear item-end color="orange" [disabled]="!foodItems[i].quantity" (click)="minusQuantity(item, i)"> -->
+                        <!-- <ion-icon name="remove" style="zoom:1.8;"></ion-icon>
+                        </button> -->
+                    </ion-col>
+                    <ion-col col-2 padding-top text-center>
+                        <!-- <span>{{foodItems[i].quantity}}</span> {{item.descripcion}} -->
+                    </ion-col>
+                    <ion-col col-2>
+                        <!-- <button ion-button clear item-end color="orange" (click)="addQuantity(item, i)">
+                            <ion-icon name="add" style="zoom:1.8;"></ion-icon>
+                        </button> -->
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+    </ion-list>
+
+</ion-content>
+
+<ion-footer>
+
+
+<ion-toolbar>
+    <ion-grid>
+        <ion-row>
+             <ion-col col-6>
+                <div text-center>
+                    <button ion-button round block color="orange" (click)="(goBack())">{{'BOTTONS.BACK' | translate}}</button>
+                </div>
+            </ion-col>
+            <ion-col col-6>
+                <div text-center>
+                    <button ion-button round block color="orange">
+                        <ion-buttons end>
+                            <button ion-button id="carrito" icon-only (click)="gotoCartPage('foodCategory')">
+                                <ion-icon name="cart"></ion-icon>
+                                <div *ngIf="total!=null; else other_content">
+                                    <ion-badge item-end class="carrito_numero">{{total}}</ion-badge>
+                                </div>
+                                <ng-template #other_content>
+                                    <ion-badge item-end class="carrito_numero">0</ion-badge>
+                                </ng-template>
+                            </button> &nbsp;&nbsp;
+                    </ion-buttons>
+                    </button>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-toolbar>
+</ion-footer>

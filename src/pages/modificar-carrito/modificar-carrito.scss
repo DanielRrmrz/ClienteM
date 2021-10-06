@@ -1,0 +1,23 @@
+page-modificar-carrito {
+    img {
+        width: 100%;
+    }
+    .caja {
+        border-radius: 6px;
+        overflow: hidden;
+        height: 3.6rem;
+        font-size: 2.4rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin: 0.4rem 0.2rem;
+        padding: 4px 1.1em;
+        margin-left: 20px;
+    }
+    .imgDetalle {
+        height: 220px;
+        width: 330px;
+    }
+    .toolbar-title-md {
+        padding: 6px 12px;
+    }
+}

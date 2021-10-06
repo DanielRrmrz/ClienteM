@@ -1,0 +1,44 @@
+page-cart {
+    .item {
+        border-bottom: 1.55px dashed #c8c7cc !important;
+    }
+    .item-inner {
+        border-bottom: 0px !important;
+    }
+    .item:first-child {
+        border-top: 1.55px dashed #c8c7cc !important;
+    }
+    .item:last-child {
+        border-bottom: 1.55px dashed #c8c7cc !important;
+    }
+    .grid {
+        padding: 0px !important;
+        .col {
+            .button {
+                padding: 0px !important;
+                margin: 0px !important;
+            }
+        }
+    }
+    .total {
+        font-size: 1.6rem !important;
+        font-weight: bold;
+    }
+    .total-price {
+        font-size: 1.6rem;
+        font-weight: bold;
+    }
+    .resultado {
+        text-align: center;
+    }
+    .toolbar-title {
+        overflow: visible;
+        text-overflow: clip;
+    }
+    .toolbar-title-md {
+        padding: 6px 12px;
+    }
+    ._clave {
+        color: #E36485;
+    }
+}

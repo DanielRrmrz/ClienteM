@@ -1,0 +1,43 @@
+<ion-content id="landing-page">
+    <div class="background animated fadeInDown">
+        <div class="contents">
+            <br>
+            <button ion-button block color="facebook" (click)="signInWithFacebook()">
+              <ion-icon ios="logo-facebook" md="logo-facebook"></ion-icon>
+              &nbsp;&nbsp;{{'LOGIN.SOCIALNET' | translate}}
+            </button>
+            <br>
+            <button ion-button block color="light" (click)="continuar()">
+              <ion-icon name="create" color="orange"></ion-icon>
+              &nbsp;&nbsp;{{'LOGIN.PERSONALDATA' | translate}}&nbsp;&nbsp;&nbsp;&nbsp;
+            </button>
+            <br>
+            <!--Agregar boton para volver a la pagina anterior-->
+            <button id = "botonAtras"
+             ion-button (click)="cerrarModal()">{{'LOGIN_REGISTRO.BACK' | translate}}
+            </button>
+            <!-- <br>
+            <button ion-button block color="light" (click)="signInWithGoogle()">
+              <img width="16" height="16" src="assets/imgs/google.png">
+              &nbsp;&nbsp;Ingresar con Google&nbsp;&nbsp;&nbsp;&nbsp;
+            </button>
+            <br>
+            <p text-center class="title2">ó</p>
+            <br> -->
+            <!-- <button ion-button block color="orange" (click)="goPhoneNumber()">
+              <img width="25" height="25" src="assets/imgs/smartphone.png">
+              &nbsp;&nbsp;Ingresar con teléfono móvil&nbsp;&nbsp;&nbsp;&nbsp;
+            </button>
+            <br> -->
+            <!-- <div text-center>
+                <button ion-button outline round color="orange" (click)="Guest()">
+                <img width="25" height="25" src="assets/imgs/smartphone.png">
+                &nbsp;&nbsp;Continuar&nbsp;&nbsp;&nbsp;&nbsp;
+              </button>
+            </div> -->
+        </div>
+        <!-- <div class="footer" text-center>
+            Para poder hacer uso de nuestra plataforma es necesario que crees tu cuenta para poderte brindar el mejor servico.
+        </div> -->
+    </div>
+</ion-content>

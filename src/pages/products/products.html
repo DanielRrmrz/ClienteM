@@ -1,0 +1,102 @@
+<ion-header no-border>
+    <ion-navbar color="orange">
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12>
+                    <div text-center>
+                        <ion-title>{{pedidoData.nombreLocal}}</ion-title>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content scrollbar-y-auto>
+    <div *ngFor="let produc of getProductos; let i = index;">
+        <ion-list> 
+            <ion-item-sliding>
+                <ion-item>
+                    <ion-avatar item-start>
+                        <ion-card>
+
+                            <ion-card-content>
+                                <h2>
+                                    <div class="cantidad">
+                                        {{produc.cantidad}}
+                                    </div>
+                                </h2>
+                            </ion-card-content>
+
+                        </ion-card>
+                    </ion-avatar>
+                    {{produc.producto}}
+                </ion-item>
+                <button ion-button color="danger" (click)="deleteProducto(slidingItem, produc.$key)">
+                    <ion-icon name="trash"></ion-icon>
+                    <span>{{'BOTTONS.DELETE' | translate}}</span>
+                </button>
+                <ion-item-options side="left">
+                    <div *ngIf="i >= 0 && getProductos.length != 1">
+                        <button ion-button color="danger" (click)="deleteProducto(slidingItem, produc.$key)">
+                                        <ion-icon name="trash"></ion-icon>
+                                        <span>{{'BOTTONS.DELETE' | translate}}</span>
+                                    </button>
+                    </div>
+                    <div *ngIf="getProductos.length == 1">
+                        <button ion-button color="danger" (click)="NodeleteProducto()">
+                                        <ion-icon name="trash"></ion-icon>
+                                        <span>{{'BOTTONS.DELETE' | translate}}</span>
+                                    </button>
+                    </div>
+                </ion-item-options>
+                 <ion-item-options side="right">
+                    <button ion-button color="orange" (click)="productEditModal(produc.$key)">
+                                    <ion-icon name="refresh"></ion-icon>
+                                    <span>{{'BOTTONS.UPDATE' | translate}}</span>
+                                </button>
+                </ion-item-options>
+            </ion-item-sliding>
+        </ion-list>
+    </div>
+    <ion-row class="etiquetas-inst">
+        <ion-col class = "etiquetas" col-4> <!--Etiquetas de instruccion-->
+                {{'BOTTONS.DELETE' | translate}}
+                <ion-icon name="arrow-forward"></ion-icon>
+        </ion-col>
+        <ion-col class = "etiquetas" col-4 style="text-align: center; color: black;">
+                Deslizar
+        </ion-col>
+        <ion-col class = "etiquetas" col-4 style="text-align: right; color:#E36485;">
+                <ion-icon name="arrow-back"></ion-icon> {{'BOTTONS.UPDATE' | translate}}
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-12>
+            <ion-fab center middless>
+                <button ion-fab mini color="aceptar" (click)="productModal()">
+                        <ion-icon name="add"></ion-icon>
+                    </button>
+            </ion-fab>
+            <br><br>
+            <div id="masProductos">
+                {{'PLACE.ADDP' | translate}}
+            </div>
+        </ion-col>
+    </ion-row>
+</ion-content>
+
+<ion-footer no-border>
+    <ion-toolbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12>
+                    <div text-center>
+                        <button ion-button round block color="orange" (click)="(goBack())">{{'BOTTONS.BACK' | translate}}</button>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-footer>

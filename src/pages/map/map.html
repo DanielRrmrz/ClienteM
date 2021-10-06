@@ -1,0 +1,44 @@
+<ion-header>
+
+    <ion-navbar color="orange" hideBackButton>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-2>
+                    <ion-buttons>
+                        <button ion-button icon-only (click)="goBack()">
+                <ion-icon name="close"></ion-icon>
+              </button>
+                    </ion-buttons>
+                </ion-col>
+                <ion-col col-8>
+                    <div text-center>
+                        <ion-title>{{'MAPPAGE.LOCATION' | translate}}</ion-title>
+                    </div>
+                </ion-col>
+                <ion-col col-2></ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-navbar>
+
+</ion-header>
+
+<div class="switch">
+    <div text-center>
+        <button ion-button round color="orange" (click)="validLocation()">¡
+            {{'MAPPAGE.READY' | translate}}</button>
+    </div>
+    <div text-center>
+        <button ion-button round color="orange" (click)="initializeMap()">
+            <ion-icon name="locate"></ion-icon>
+        </button>
+    </div>
+</div>
+
+<ion-content>
+    <ion-searchbar #searchbar [(ngModel)]="buscador"  [placeholder]="DC">
+    </ion-searchbar>
+    <ion-input   class="Apto" [(ngModel)]="apto" [placeholder]="FLAT"></ion-input>
+    <div class="map">
+        <div id="map" #map></div>
+    </div>
+</ion-content>

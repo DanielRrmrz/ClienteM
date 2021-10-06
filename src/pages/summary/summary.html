@@ -1,0 +1,227 @@
+<ion-header no-border>
+
+    <ion-navbar color="orange" hideBackButton>
+        <div text-center>
+            <ion-title>{{'SUMMARY.SUMMARY' | translate}}</ion-title>
+        </div>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-card >
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12>
+                    <div text-center> {{'SUMMARY.DC' | translate}} </div>
+                </ion-col>
+            </ion-row>
+            <div *ngFor="let pedido of pedidos">
+                <ion-row>
+                    <ion-col col-2>
+                        <div class="circuloStart"></div>
+                    </ion-col>
+                    <ion-col col-8>
+                        <div class="direccion" text-center>
+                            {{pedido.nombreLocal}}
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </div>
+            <ion-row>
+                <ion-col col-12>
+                    <div text-center> {{'SUMMARY.AD' | translate}} </div>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-2>
+                    <div class="circuloEnd"></div>
+                </ion-col>
+                <ion-col col-8>
+                    <div class="direccion" text-center (click)="openMap(servicio.entregaGeo._lat,servicio.entregaGeo._long)">
+                        {{servicio.entregaDir}}
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+    <ion-card >
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12>
+                    <div text-center>{{'SUMMARY.SELECTV' | translate}}</div>
+                </ion-col>
+            </ion-row>
+            <div *ngIf="moto == true && carro == true">
+                <ion-row>
+                    <ion-col col-6>
+                        <div class="div-img" (click)="clickMoto(true); saveTransporte('Motocicleta')">
+                            <img src="assets/imgs/moto_0.png" [hidden]="!(servicio.tipoTransporte != 'Motocicleta')">
+                            <img src="assets/imgs/moto_1.png" [hidden]="!(servicio.tipoTransporte == 'Motocicleta')">
+                        </div>
+                    </ion-col>
+                    <ion-col col-6>
+                        <div class="div-img" (click)="clickCar(true); saveTransporte('Automovil')">
+                            <img src="assets/imgs/car_0.png" [hidden]="!(servicio.tipoTransporte != 'Automovil')">
+                            <img src="assets/imgs/car_1.png" [hidden]="!(servicio.tipoTransporte == 'Automovil')">
+                        </div>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col corl-12>
+                        <div text-center>
+                            ¿Pedido grande? Solicita un pedido en carro
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </div>
+            <div *ngIf="moto == true && carro == false">
+                <ion-row>
+                    <ion-col col-12>
+                        <div class="div-img-moto-carro" (click)="clickMoto(true); saveTransporte('Motocicleta')">
+                            <img src="assets/imgs/moto_0.png" [hidden]="!(servicio.tipoTransporte != 'Motocicleta')">
+                            <img src="assets/imgs/moto_1.png" [hidden]="!(servicio.tipoTransporte == 'Motocicleta')">
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </div>
+            <div *ngIf="moto == false && carro == true">
+                <ion-row>
+                    <ion-col col-12>
+                        <div class="div-img-moto-carro" (click)="clickCar(true); saveTransporte('Automovil')">
+                            <img src="assets/imgs/car_0.png" [hidden]="!(servicio.tipoTransporte != 'Automovil')">
+                            <img src="assets/imgs/car_1.png" [hidden]="!(servicio.tipoTransporte == 'Automovil')">
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-grid>
+    </ion-card>
+    <ion-card >
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12>
+                    <div text-center>{{'SUMMARY.MP' | translate}}</div>
+                </ion-col>
+            </ion-row>
+            <div *ngIf="efectivo == true && tarjeta == true">
+                <div *ngIf="servicio.metodo_pago == 'Efectivo'">
+                    <ion-row>
+                        <ion-col corl-6>
+                            <div>
+                                <img src="assets/imgs/money.png" class="imagen-metodoPago">
+                            </div>
+                        </ion-col>
+                        <ion-col col-6>
+                            <div text-left class="text-metodoPago">
+                                {{'SUMMARY.CASH' | translate}}
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </div>
+                <div *ngIf="servicio.metodo_pago == 'Tarjeta'">
+                    <ion-row>
+                        <ion-col corl-6>
+                            <div *ngIf="servicio.cardType == 'Visa'">
+                                <img src="assets/imgs/visa-pay-logo.png" class="imagen-metodoPago">
+                            </div>
+                            <div *ngIf="servicio.cardType == 'MasterCard'" class="imagen-metodoPago">
+                                <img src="assets/imgs/master-card.png">
+                            </div>
+                            <div *ngIf="servicio.cardType == 'American Express'" class="imagen-metodoPago">
+                                <img src="assets/imgs/amex.png">
+                            </div>
+                        </ion-col>
+                        <ion-col col-6>
+                            <div text-left class="text-metodoPago">
+                                {{servicio.cardLast4}}
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-12>
+                            <div text-center class="text-propina">
+                                {{'SUMMARY.TIP' | translate}}
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </div>
+            </div>
+            <div *ngIf="efectivo == true && tarjeta == false">
+                <ion-row>
+                    <ion-col corl-6>
+                        <div>
+                            <img src="assets/imgs/money.png" class="imagen-metodoPago">
+                        </div>
+                    </ion-col>
+                    <ion-col col-6>
+                        <div text-left class="text-metodoPago">
+                            {{'SUMMARY.CASH' | translate}}
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </div>
+            <div *ngIf="tarjeta == true && efectivo == false">
+                <ion-row>
+                    <ion-col corl-6>
+                        <div *ngIf="servicio.cardType == null">
+                            <img src="assets/imgs/credit-card.png" class="imagen-metodoPago">
+                        </div>
+                        <div *ngIf="servicio.cardType == 'Visa'">
+                            <img src="assets/imgs/visa-pay-logo.png" class="imagen-metodoPago">
+                        </div>
+                        <div *ngIf="servicio.cardType == 'MasterCard'" class="imagen-metodoPago">
+                            <img src="assets/imgs/master-card.png">
+                        </div>
+                        <div *ngIf="servicio.cardType == 'American Express'" class="imagen-metodoPago">
+                            <img src="assets/imgs/amex.png">
+                        </div>
+                    </ion-col>
+                    <ion-col col-6>
+                        <div text-left class="text-metodoPago">
+                            {{servicio.cardLast4}
+                        </div>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-12>
+                        <div text-center class="text-propina">
+                            El pago con tarjeta no incluye propina
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-grid>
+        <div text-center class="metodoPago">
+            <button ion-button color="orange" (click)="goToPaymentMethod()">{{'SUMMARY.SETP' | translate}}</button>
+        </div>
+    </ion-card>
+</ion-content>
+
+<ion-footer no-border>
+    <ion-toolbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-6>
+                    <div text-center>
+                        <button ion-button round block color="orange" (click)="(goBack())">{{'BOTTONS.BACK' | translate}}</button>
+                    </div>
+                </ion-col>
+                <ion-col col-6>
+                    <div text-center>
+                        <div *ngIf="tarjeta == true && efectivo == true">
+                            <button ion-button round block color="orange" (click)="confirmarPedido(); alertaComision(servicio.metodo_pago)">{{'SUMMARY.CP' | translate}}</button>
+                        </div>
+                        <div *ngIf="tarjeta == false && efectivo == true">
+                            <button ion-button round block color="orange" (click)="confirmarPedido()">{{'SUMMARY.CP' | translate}}</button>
+                        </div>
+                        <div *ngIf="tarjeta == true && efectivo == false">
+                            <button ion-button round block color="orange" (click)="confirmarPedidoTarjeta(servicio.cardType); alertaComision(servicio.metodo_pago)">{{'SUMMARY.CP' | translate}}</button>
+                        </div>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-footer>

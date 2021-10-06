@@ -1,0 +1,82 @@
+<ion-header>
+    <ion-navbar color="orange">
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12>
+                    <div text-center>
+                        <ion-title>{{'UPDATECART.UPDATE' | translate}}</ion-title>
+                    </div>
+                </ion-col>
+                <ion-col col-2>
+                    <ion-buttons end>
+                        <button ion-button icon-only (click)="gotoCartPage()">
+                                    <ion-icon name="cart"></ion-icon>
+                                    <div *ngIf="total!=null; else other_content">
+                                      <ion-badge item-end class="carrito_numero">{{total}}</ion-badge>
+                                    </div>
+                                    <ng-template #other_content>
+                                        <ion-badge item-end class="carrito_numero">0</ion-badge>
+                                    </ng-template>
+                                </button> &nbsp;&nbsp;
+                    </ion-buttons>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <div *ngFor="let produc of productos">
+        <div *ngIf="produc.productoID == producto">
+
+
+            <ion-list text-center padding>
+                <img class="imgDetalle" [src]="detalles.photourl">
+                <h2>{{detalles.nombre}}</h2>
+                <ion-badge color="orange" item-center>${{detalles.precio}}</ion-badge>
+                <p>{{detalles.descripcion}}</p>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col col-2></ion-col>
+                        <ion-col col-2>
+                            <button ion-button round class='qtyminus' color="orange" (click)="decrement()" [disabled]="currentNumber<=1">
+            <ion-icon name="remove"></ion-icon>
+         </button>
+                        </ion-col>
+                        <ion-col col-4>
+
+                            <!-- <ion-input type='number' name='quantity' text-center value="{{currentNumber}}" class='qty'></ion-input> -->
+                            <div class="caja">
+                                <span>{{currentNumber}}</span>
+                            </div>
+                        </ion-col>
+                        <ion-col col-2>
+                            <button ion-button round class='qtyminus' color="orange" (click)="increment()">
+                        <ion-icon name="add"></ion-icon>
+                    </button>
+                        </ion-col>
+                        <ion-col col-2></ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <button ion-button full round color="orange" (click)="modificar_producto(produc.$key, producto, currentNumber, detalles.photourl, detalles.nombre, detalles.precio, idx)">{{'UPDATECART.UPDATEORDER' | translate}}</button>
+                    </ion-row>
+                </ion-grid>
+            </ion-list>
+        </div>
+    </div>
+</ion-content>
+
+<ion-footer no-border>
+    <ion-toolbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12>
+                    <div text-center>
+                        <button ion-button round block color="orange" (click)="(goBack())">{{'BOTTONS.BACK' | translate}}</button>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-footer>

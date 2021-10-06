@@ -1,0 +1,44 @@
+<ion-content id="landing-page">
+    <div class="background animated fadeInDown">
+        <ion-fab right top>
+            <button ion-fab color="orange" (click)="idioma()"><img [src]="bandera" class="imgRedonda"></button>
+        </ion-fab>
+        <div class="contents">
+            <div text-center>
+                <img src="assets/imgs/logo_mini.png">
+            </div>
+            <br>
+            <ion-card class="card-first">
+                <ion-card-title></ion-card-title>
+                <div text-center>
+                    <button ion-button round color="orange" class="buttons" (click)="gotoEmailLogin()">{{'FIRST_LANDING_PAGE.LOGIN' | translate}}</button>
+                </div>
+                <br>
+                <div text-center>
+                    <button ion-button round outline color="orange" class="buttons" (click)="gotoEmailRegistro()">{{'FIRST_LANDING_PAGE.SIGNUP' | translate}}</button>
+                </div>
+                <br>
+                <div text-center>
+                    <button ion-button round color="orange" class="buttons" (click)="Guest()">
+                        &nbsp;&nbsp;{{'FIRST_LANDING_PAGE.GUEST' | translate}}&nbsp;&nbsp;&nbsp;&nbsp;
+                    </button>
+                </div>
+                <br>
+                <div class="footer" text-center>
+                    {{'FIRST_LANDING_PAGE.INORDER1' | translate}} <br> {{'FIRST_LANDING_PAGE.INORDER2' | translate}} <br> {{'FIRST_LANDING_PAGE.INORDER3' | translate}}
+                </div>
+                <br>
+                <div text-center (click)="alertContact()">
+                    <h6 class="colorH6">
+                        {{'SIDEBAR_List.HELP' | translate}}
+                        <ion-badge color="dark"> {{'SIDEBAR_List.CONTACT' | translate}} </ion-badge>
+                    </h6>
+                </div>
+                <br>
+                <div text-center (click)="registraConvenio()">
+                    <ion-badge color="dark"> {{'SIDEBAR_List.RNA' | translate}} </ion-badge>
+                </div>
+            </ion-card>
+        </div>
+    </div>
+</ion-content>

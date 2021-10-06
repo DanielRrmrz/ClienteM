@@ -1,0 +1,14 @@
+page-settings {
+    .tag {
+        font-size: 16px;
+        font-weight: bold;
+        color: #424242;
+    }
+    .toolbar-title {
+        overflow: visible;
+        text-overflow: clip;
+    }
+    .toolbar-title-md {
+        padding: 6px 12px;
+    }
+}

@@ -1,0 +1,92 @@
+<ion-header no-border>
+
+    <ion-navbar color="orange">
+
+        <div text-center>
+            <ion-title>{{'PLACE.DC' | translate}}</ion-title>
+        </div>
+
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <div *ngFor="let pedido of pedidos; let i = index;">
+        <ion-list>
+            <ion-item-sliding #slidingItem >
+                <ion-item >
+                    <ion-card >
+                        <ion-card-header>
+                            <ion-grid>
+                                <ion-row>
+                                    <ion-col col-8>
+                                        <div text-left>
+                                            {{pedido.nombreLocal}}
+                                        </div>
+                                    </ion-col>
+                                    <ion-col col-4>
+                                        <img class="logo_a animated fadeInDown carrito" src="assets/imgs/cart.png" (click)="goProductos(pedido.$key)">
+                                    </ion-col>
+                                </ion-row>
+                            </ion-grid>
+                        </ion-card-header>
+                        <ion-card-content>
+                            <div text-wrap color="dire" id="dire">
+                                {{pedido.direccionLocal}}
+                            </div>
+                        </ion-card-content>
+                    </ion-card>
+                </ion-item>
+                <ion-item-options side="rigth">
+                    <button ion-button color="danger" (click)="deletePedido(servicioID, pedido.$key, pedido.nombreLocal, pedidos.length, slidingItem)">
+                        <ion-icon name="trash"></ion-icon>
+                        <span>{{'BOTTONS.DELETE' | translate}}</span>
+                    </button>
+                </ion-item-options>
+            </ion-item-sliding>
+        </ion-list>
+    </div>
+    <ion-row>
+        <ion-col col-6>
+        </ion-col>
+        <ion-col col-6>
+            <div text-right id="E">
+                <ion-icon name="arrow-back"></ion-icon>
+                <!--{{'BOTTONS.DELETE' | translate}}-->
+                Deslizar para eliminar <!--Tibes-->
+            </div>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-12>
+            <ion-fab center middless>
+                <button ion-fab mini color="primary" (click)="addPedido()">
+                    <ion-icon name="add"></ion-icon>
+                </button>
+            </ion-fab>
+            <br><br>
+            <div id="masPedidos">
+                {{'SERV.ADDSPOT' | translate}}
+            </div>
+        </ion-col>
+    </ion-row>
+</ion-content>
+
+<ion-footer no-border>
+    <ion-toolbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-6>
+                    <div text-center>
+                        <button ion-button round block color="orange" (click)="(goBack())">{{'BOTTONS.BACK' | translate}}</button>
+                    </div>
+                </ion-col>
+                <ion-col col-6>
+                    <div text-center>
+                        <button ion-button round block color="orange" (click)="(goToSummary(anonimo))">{{'BOTTONS.CONTINUE' | translate}}</button>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-footer>

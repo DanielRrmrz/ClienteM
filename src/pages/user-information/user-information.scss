@@ -1,0 +1,60 @@
+    page-user-information {
+        .background {
+            height: max-content;
+            background-image: url('../assets/imgs/landing-page_.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: auto;
+            z-index: 1;
+            position: absolute;
+            .contents {
+                position: relative;
+                bottom: 5%;
+                top: 4rem;
+                color: #fff;
+                h1 {
+                    color: #E36485;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                }
+            }
+        }
+        text-align: center;
+        .title1 {
+            font-size: 20px;
+            color: #222;
+            font-weight: bold;
+        }
+        .title2 {
+            color: #504e4e;
+            font-weight: bold;
+        }
+        ion-list .item {
+            border-bottom: 1px solid $orange !important;
+        }
+        .datetime {
+            padding: 0px !important;
+        }
+        .toolbar-title {
+            overflow: visible;
+            text-overflow: clip;
+        }
+        .toolbar-title-md {
+            padding: 6px 12px;
+        }
+        button {
+            border-radius: 1rem !important;
+        }
+        ion-label {
+            color: #9e9e9e !important;
+        }
+        .terminos {
+            font-size: 1.8rem;
+            color: #E36485;
+            text-decoration: underline;
+        }
+    }

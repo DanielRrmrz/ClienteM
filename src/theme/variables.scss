@@ -1,0 +1,144 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+@import "ionic.globals";
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+$white: #FFFFFF;
+$white-a: darken($white, 3%);
+$white-b: darken($white, 6%);
+$white-c: darken($white, 12%);
+$white-d: darken($white, 24%);
+$black: rgba(#000000, .8);
+$black-a: lighten($black, 10%);
+$black-b: lighten($black, 20%);
+$black-c: lighten($black, 40%);
+$black-d: lighten($black, 60%);
+$theme-color-1: #00e9d5;
+$theme-color-2: #ae75e7;
+$theme-color-3: #5e5874;
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+$colors: ( primary: #488aff, secondary: #32db64, danger: #f53d3d, light: #f4f4f4, dark: #222, orange: #E36485, ash: #efefef, white: #fff, aceptar:#27ae60, dire: #9E9E9E, walkthrough:( base: $theme-color-1, contrast: $white), walkthrough-alt:( base: $theme-color-2, contrast: $white), walkthrough-header:( base: transparent, contrast: $white), header:( base: $theme-color-1, contrast: $white), header-alt:( base: $theme-color-2, contrast: $white), facebook:( base: #3b5998, contrast: $white), google:( base: #cc181e, contrast: $white), twitter:( base: #00aced, contrast: $white), button:( base: $theme-color-1, contrast: $white), button-alt:( base: $theme-color-2, contrast: $white), background:( base: $white-a, contrast: $black-b), tabs-navigation:( base: $white, contrast: $white-d));
+$orange: #E36485;
+$ash-light: #efefef;
+$radio-ios-color-on: $orange;
+$alert-ios-button-text-color: $orange;
+$toggle-ios-height: 20px;
+$radio-md-color-on: $orange;
+$alert-md-button-text-color: $orange;
+$toggle-md-handle-height: 20px;
+$cordova-statusbar-padding-modal-max-width: 100px;
+$tabs-background:#E36485;
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+$loading-ios-spinner-bubbles-color: #E36485;
+$toolbar-ios-title-font-size: 1.4rem;
+$searchbar-ios-background-color: #fff;
+$toast-ios-background: #E36485;
+$toolbar-ios-title-font-size: 1.4rem;
+$toolbar-ios-title-font-weight: 600;
+$navbar-ios-height: 100px;
+$toolbar-ios-height: 50px;
+$label-md-text-color-focused: #E36485;
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+$loading-md-spinner-bubbles-color: #E36485;
+$searchbar-md-input-background-color: #fff;
+$searchbar-md-input-border-radius:20px;
+$toast-md-background: #E36485;
+$toolbar-md-title-font-size: 1.4rem;
+$navbar-md-height: 100px;
+$toolbar-md-height: 50px;
+$alert-md-head-text-align: center;
+$tabs-md-tab-text-color: #000000;
+$tabs-md-tab-text-color-active: #fff;
+$tabs-md-tab-icon-color: #000000;
+$tabs-md-tab-icon-color-active: #fff;
+$label-md-text-color-focused: #E36485;
+$alert-md-background-color: #fff;
+$text-input-md-show-focus-highlight: false;
+$popover-md-width: 95%;
+$popover-md-max-height: 90%;
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+@import "ionic.theme.default";
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+@import "ionic.ionicons";
+// Fonts
+// --------------------------------------------------
+@import "roboto";
+@import "noto-sans";
+.carrito_numero {
+    position: absolute;
+    top: -5px;
+    left: 25px;
+}
+
+.carrito_vacio {
+    position: relative;
+    top: 30%;
+    font-size: 20px;
+}
+
+.icon_5x {
+    font-size: 100px;
+}
+
+.pac-item {
+    height: 50px;
+    cursor: default;
+    padding: 1px 22px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    line-height: 30px;
+    text-align: left;
+    /* border-top: 1px #2196F3; */
+    color: #9E9E9E;
+    font-size: 1.5rem;
+    padding-top: 10px;
+}
+
+.pac-container {
+    background-color: #fff;
+    position: absolute!important;
+    z-index: 1000;
+    border-radius: 2px;
+    border-top: 1px solid #d9d9d9;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+}

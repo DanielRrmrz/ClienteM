@@ -1,0 +1,152 @@
+<ion-header no-border>
+    <ion-navbar color="orange" hideBackButton>
+        <div text-center [hidden]="!(switch == 'map')">
+            <ion-title>{{'PLACE.DC' | translate}}</ion-title>
+        </div>
+        <div text-center [hidden]="!(switch == 'list')">
+            <ion-title>{{pedidoData.nombreLocal}}</ion-title>
+        </div>
+    </ion-navbar>
+</ion-header>
+
+<!-- <div class="switch_locate" [class.hidemap]="!((switch == 'map') || error)">
+    <button ion-button icon-only (click)='choosePosition()'>
+        <ion-icon name="ios-locate-outline"></ion-icon>
+    </button>
+</div> -->
+
+<div class="currentitem" *ngIf="currentregional">
+    <button ion-item no-lines (click)="viewPlace(currentregional.title)">
+        <h2>{{ currentregional.title }}</h2>
+        <ion-note item-right icon-only>
+            <ion-icon name="ios-arrow-forward"></ion-icon>
+        </ion-note>
+    </button>
+</div>
+
+<ion-content scrollbar-y-auto>
+    <div [hidden]="!(switch == 'list')">
+        <div *ngFor="let produc of getProductos; let i = index;">
+            <ion-list>
+                <ion-item-sliding #slidingItem>
+                    <ion-item>
+                        <ion-avatar item-start>
+                            <ion-card class="carsForce">
+
+                                <ion-card-content>
+                                    <h2>
+                                        <div class="cantidad">
+                                            {{produc.cantidad}}
+                                        </div>
+                                    </h2>
+                                </ion-card-content>
+
+                            </ion-card>
+                        </ion-avatar>
+                        {{produc.producto}}
+                    </ion-item>
+                    <ion-item-options side="left">
+                        <button ion-button color="danger" (click)="deleteProducto(slidingItem, produc.$key)">
+                            <ion-icon name="trash"></ion-icon>
+                            <span style="font-weight: bold">{{'PLACE.DELETE' | translate}}</span>
+                        </button>
+                    </ion-item-options>
+                    <ion-item-options side="right">
+                        <button ion-button color="orange" (click)="productEditModal(produc.$key)">
+                            <ion-icon name="refresh"></ion-icon>
+                            <span style="font-weight: bold" >{{'PLACE.UPDATE' | translate}}</span>
+                        </button>
+                    </ion-item-options>
+                </ion-item-sliding>
+            </ion-list>
+        </div>
+        <ion-row class="etiquetas-inst">
+            <ion-col class = "etiquetas" col-4> <!--Etiquetas de instruccion-->
+                    {{'BOTTONS.DELETE' | translate}}
+                    <ion-icon name="arrow-forward"></ion-icon>
+            </ion-col>
+            <ion-col class = "etiquetas" col-4 style="text-align: center; color: black;">
+                    Deslizar
+            </ion-col>
+            <ion-col class = "etiquetas" col-4 style="text-align: right; color:#E36485;">
+                    <ion-icon name="arrow-back"></ion-icon> {{'BOTTONS.UPDATE' | translate}}
+            </ion-col>
+        </ion-row>
+        <div *ngIf="this.servicioID == undefined">
+            <ion-fab center middless>
+                <button ion-fab mini color="aceptar" (click)="productModal()">
+                    <ion-icon name="add"></ion-icon>
+                </button>
+            </ion-fab>
+        </div>
+        <div *ngIf="this.servicioID != undefined">
+            <ion-fab center middless>
+                <button ion-fab mini color="aceptar" (click)="productModalServ(servicioID)">
+                    <ion-icon name="add"></ion-icon>
+                </button>
+            </ion-fab>
+        </div>
+        <br><br>
+        <div id="masProductos">
+            {{'PLACE.ADDP' | translate}}
+        </div>
+    </div>
+
+    <div class="map" [class.hidemap]="!((switch == 'map') || error)">
+        <!-- <div [hidden]="buscar == true">
+            <ion-searchbar #searchbar [placeholder]="DC" (keyup)="buscador($event.target.value)">
+            </ion-searchbar>
+        </div> -->
+        <ion-card>
+            <ion-card-content>
+                <p>
+                    <textarea class="input1" [(ngModel)]="titulo_" [placeholder]="INPUT1" (keyup)="input1($event.target.value)"></textarea>
+                    <textarea class="tex2" [(ngModel)]="dire" [placeholder]="INPUT2"></textarea>
+                </p>
+            </ion-card-content>
+            <img src="assets/imgs/pq.svg" />
+        </ion-card>
+        <!-- <div id="map" #map [hidden]="buscar"></div> -->
+    </div>
+
+
+
+</ion-content>
+<ion-footer>
+<ion-toolbar>
+    <div [hidden]="!(switch == 'map')">
+        <ion-grid>
+            <ion-row>
+                <ion-col col-6>
+                    <button ion-button round full color="orange" (click)="(switch = 'map'); goBack();" [class.active]="(switch == 'map')">
+                        {{'BOTTONS.BACK' | translate}}
+                    </button>
+                </ion-col>
+                <ion-col col-6>
+                    <button ion-button round full color="orange" (click)="(switch = 'list'); _titulo(titulo_); direStart();" [class.active]="(switch == 'list')" [disabled]="buttonDisabled">
+                        {{'BOTTONS.CONTINUE' | translate}}
+                    </button>
+                </ion-col>
+
+            </ion-row>
+        </ion-grid>
+    </div>
+    <div [hidden]="!(switch == 'list')">
+        <ion-grid>
+            <ion-row>
+                <ion-col col-6>
+                    <button ion-button round full color="orange" (click)="(switch = 'map'); resizeMap(); atras();" [class.active]="(switch == 'map')">
+                        {{'BOTTONS.BACK' | translate}}
+                    </button>
+                </ion-col>
+                <ion-col col-6>
+                    <button ion-button round full color="orange" (click)="(switch = 'list'); servicePage();" [class.active]="(disable != null)" [disabled]="disable">
+                        {{'BOTTONS.CONTINUE' | translate}}
+                    </button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+
+</ion-toolbar>
+</ion-footer>

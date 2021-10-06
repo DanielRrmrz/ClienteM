@@ -1,0 +1,241 @@
+<ion-header no-border>
+    <ion-navbar color="orange" hideBackButton>
+        <div text-center>
+            <ion-title>{{'DELIVERY_TRACKING.TITLE' | translate}}</ion-title>
+        </div>
+    </ion-navbar>
+</ion-header>
+
+<ion-content id="google-v1">
+    <div id="order-info">
+        <div [hidden]="servicio.estatus != 'Aceptado'" id="center_load">
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+        </div>
+        <div [hidden]="servicio.estatus == 'Aceptado'">
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-12 text-center class="status _estatus">
+                        <ion-col text-center id="_estatus">
+                            <ion-fab edge>
+                                <div *ngIf="servicio.estatus == ('Gestando') || servicio.estatus == ('AceptaBme') ||
+                              servicio.estatus == ('BuscandoBme')">
+                                    <div class="palomita">
+                                        <button ion-fab mini color="dark">
+                      <ion-icon name="checkmark"></ion-icon>
+                    </button>
+                                    </div>
+                                    <div class="lds-ring">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                                <div *ngIf="servicio.estatus != ('Gestando') && servicio.estatus != ('AceptaBme') &&
+                              servicio.estatus != ('BuscandoBme')">
+                                    <button ion-fab mini color="light" disabled>
+                    <ion-icon name="checkmark"></ion-icon>
+                  </button>
+                                </div>
+                            </ion-fab>
+                        </ion-col>
+                        <ion-col text-center [ngClass]="this.platform.dir()==='ltr'? 'dot-left': 'dot-right'">
+                            <span> ... </span>
+                        </ion-col>
+                        <ion-col text-center id="_estatus">
+                            <ion-fab edge>
+                                <div *ngIf="servicio.estatus == ('Yendo')">
+                                    <div class="palomita">
+                                        <button ion-fab mini color="dark">
+                      <ion-icon name="checkmark"></ion-icon>
+                    </button>
+                                    </div>
+                                    <div class="lds-ring">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                                <div *ngIf="servicio.estatus != ('Yendo')">
+                                    <button ion-fab mini color="light" disabled>
+                    <ion-icon name="checkmark"></ion-icon>
+                  </button>
+                                </div>
+                            </ion-fab>
+                        </ion-col>
+                        <ion-col text-center [ngClass]="this.platform.dir()==='ltr'? 'dot-left': 'dot-right'">
+                            <span> ... </span>
+                        </ion-col>
+                        <ion-col text-center id="_estatus">
+                            <ion-fab edge>
+                                <div *ngIf="servicio.estatus == ('Enviando')">
+                                    <div class="palomita">
+                                        <button ion-fab mini color="dark">
+                      <ion-icon name="checkmark"></ion-icon>
+                    </button>
+                                    </div>
+                                    <div class="lds-ring">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                                <div *ngIf="servicio.estatus != ('Enviando')">
+                                    <button ion-fab mini color="light" disabled>
+                    <ion-icon name="checkmark"></ion-icon>
+                  </button>
+                                </div>
+                            </ion-fab>
+                        </ion-col>
+                        <ion-col text-center [ngClass]="this.platform.dir()==='ltr'? 'dot-left': 'dot-right'">
+                            <span> ... </span>
+                        </ion-col>
+                        <ion-col text-center id="_estatus">
+                            <ion-fab edge>
+                                <div *ngIf="servicio.estatus == ('EnPuerta')">
+                                    <div class="palomita">
+                                        <button ion-fab mini color="dark">
+                      <ion-icon name="checkmark"></ion-icon>
+                    </button>
+                                    </div>
+                                    <div class="lds-ring">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                                <div *ngIf="servicio.estatus != ('EnPuerta')">
+                                    <button ion-fab mini color="light" disabled>
+                    <ion-icon name="checkmark"></ion-icon>
+                  </button>
+                                </div>
+                            </ion-fab>
+                        </ion-col>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="custom-row">
+                    <ion-col col-12 text-center>
+                        <div *ngIf="servicio.estatus == ('Aceptado')" class="divStatus">
+                            <p class="track-title" class="statusText">{{'DELIVERY_TRACKING.CONFIRMORDER' | translate}}</p>
+                        </div>
+                        <div *ngIf="servicio.estatus == ('Gestando')|| servicio.estatus ==  ('AceptaBme') || servicio.estatus == ('BuscandoBme')" class="divStatus">
+                            <p class="track-title" class="statusText">{{'DELIVERY_TRACKING.PREPARINGORDER' | translate}}</p>
+                        </div>
+                        <div *ngIf="servicio.estatus == ('Yendo')" class="divStatus">
+                            <p class="track-title" class="statusText">
+                                {{'DELIVERY_TRACKING.GOINGTO' | translate}}
+                            </p>
+                        </div>
+                        <div *ngIf="servicio.estatus == ('Enviando')" class="divStatus">
+                            <p class="track-title" class="statusText">{{'DELIVERY_TRACKING.TRAKING' | translate}}</p>
+                        </div>
+                        <div *ngIf="servicio.estatus == ('EnPuerta')" class="divStatus">
+                            <p class="track-title" class="statusText">{{'DELIVERY_TRACKING._OUTSIDE' | translate}}</p>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </div>
+    <div id="track-info">
+        <div *ngIf="servicio.estatus == ('Aceptado')">
+            <p class="track-des">{{pedido.nombreLocal}} {{'DELIVERY_TRACKING.ORDER' | translate}}</p>
+        </div>
+        <div *ngIf="servicio.estatus == ('Gestando')|| servicio.estatus ==  ('AceptaBme') || servicio.estatus == ('BuscandoBme')">
+            <p class="track-des">{{pedido.nombreLocal}} {{'DELIVERY_TRACKING.ORDERP' | translate}}</p>
+        </div>
+        <div *ngIf="servicio.estatus == ('Yendo')">
+            <p class="track-des">
+                {{usInfo.username}} {{'DELIVERY_TRACKING.ONHIS' | translate}}
+            </p>
+        </div>
+        <div *ngIf="servicio.estatus == ('Enviando')">
+            <p class="track-des">{{usInfo.username}} {{'DELIVERY_TRACKING.WAY' | translate}}</p>
+        </div>
+        <div *ngIf="servicio.estatus == ('EnPuerta')">
+            <p class="track-des">{{usInfo.username}} {{'DELIVERY_TRACKING.OUTSIDE' | translate}}</p>
+        </div>
+    </div>
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [zoomControl]="false" [streetViewControl]="false" [fullscreenControl]="true" [styles]="MapStyle">
+        <agm-direction [origin]="origin" [destination]="destination" [markerOptions]="markerOptions" [renderOptions]="renderOptions"></agm-direction>
+        <agm-marker [latitude]="lat" [longitude]="lng" [label]="{color: 'dark', fontWeight: 'bold', letterSpacing:'1px', text: 'Lorem Ipsum', text: pedido.nombreLocal}" [iconUrl]="_Marker">
+        </agm-marker>
+    </agm-map>
+</ion-content>
+
+<ion-footer no-border>
+    <ion-toolbar>
+        <div [hidden]="!(servicioInfo.uidRepartidor == undefined)">
+            <div id="delivery-details">
+                <ion-grid>
+                    <ion-row>
+                        <ion-col col-12 text-center>
+                            <b>{{'DELIVERY_TRACKING.SERVICE' | translate}}:</b> <b class="orange">#{{servicioInfo.clave}}</b>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <div class="_spinner"></div>
+                    </ion-row>
+                </ion-grid>
+            </div>
+        </div>
+        <div [hidden]="!(servicioInfo.uidRepartidor != undefined)">
+            <div id="delivery-details">
+                <ion-grid>
+                    <ion-row>
+                        <ion-col col-12 text-center>
+                            <b>{{'DELIVERY_TRACKING.SERVICE' | translate}}:</b> <b class="orange">#{{servicioInfo.clave}}</b>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-3>
+                            <img [src]="usInfo.photourl" class="imgRedonda" />
+                        </ion-col>
+                        <ion-col col-6>
+                            <div text-left padding-right>
+                                <h6 ion-text>
+                                    <a class="orange">{{usInfo.username}} {{usInfo.lastname}}</a>
+                                </h6>
+                            </div>
+                        </ion-col>
+                        <ion-col col-3 text-center>
+                            <div class="moto">
+                                {{ usInfo.marca }}
+                            </div>
+                            <div>
+                                {{ usInfo.placa }}
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </div>
+        </div>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-6>
+                    <div text-center>
+                        <button ion-button color="orange" round block icon-only [disabled]="botones" (click)="(_callNumber(tel))">
+                            <ion-icon name="call" is-active="false"></ion-icon>
+                        </button>
+                    </div>
+                </ion-col>
+                <ion-col col-6>
+                    <div text-center>
+                        <button ion-button color="orange" round block icon-only [disabled]="botones" (click)="(_chat(servicioInfo.playerIDRepartidor))">
+                            <ion-icon name="chatbubbles" is-active="false"></ion-icon>
+                        </button>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-footer>

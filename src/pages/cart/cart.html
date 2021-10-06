@@ -1,0 +1,123 @@
+<ion-header no-border>
+    <ion-navbar color="orange" hideBackButton>
+        <div text-center>
+            <ion-title>{{'CART.TITLE' | translate}}</ion-title>
+        </div>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <div *ngIf="resultado==1; else other_content">
+            <div *ngFor="let product of products">
+                <div *ngFor="let produc of productos; let i = index;">
+                    <div *ngIf="product.productoID==produc.codigo">
+                        <ion-item-sliding #slidingItem class="animated bounceInLeft" text-wrap>
+                            <ion-item>
+                                <ion-thumbnail item-start>
+                                    <img [src]="produc.photo">
+                                </ion-thumbnail>
+                                <ion-row>
+                                    <ion-col style="margin-top: 6%;">
+                                        <h2>{{produc.nombre}}</h2>
+                                    </ion-col>
+                                    <ion-col col-2 text-center style="margin-top: 2%;">
+                                        <span>{{produc.cantidad}}</span>
+                                    </ion-col>
+                                    <ion-col col-4 text-right>
+                                        <ion-badge item-end color="orange">{{produc.total | currency}}</ion-badge>
+                                    </ion-col>
+                                </ion-row>
+                            </ion-item>
+                            <ion-item-options side="left">
+                                <button ion-button color="danger" (click)="borrar_producto(product.$key, slidingItem, i)">
+                                    <ion-icon name="trash"></ion-icon>
+                                    <span>{{'BOTTONS.DELETE' | translate}}</span>
+                                </button>
+                            </ion-item-options>
+                            <ion-item-options side="right">
+                                <button ion-button color="orange" (click)="productEditModal(i, produc.codigo)">
+                                    <ion-icon name="refresh"></ion-icon>
+                                    <span>{{'BOTTONS.UPDATE' | translate}}</span>
+                                </button>
+                            </ion-item-options>
+                        </ion-item-sliding>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ng-template #other_content>
+            <ion-item class="resultado" text-wrap>
+                <h1>{{'CART.NOPRODUCTS' | translate}}</h1>
+            </ion-item>
+        </ng-template>
+    </ion-list> 
+    <!--Etiquetas de instruccion-->
+    <ion-row>
+        <ion-col class = "etiquetas" col-4 style="color: #f53d3d;"> 
+                {{'BOTTONS.DELETE' | translate}}
+                <ion-icon name="arrow-forward"></ion-icon>
+        </ion-col>
+        <ion-col class = "etiquetas" col-4 style="text-align: center; color: black;">
+                Deslizar
+        </ion-col>
+        <ion-col class = "etiquetas" col-4 style="text-align: right; color:#E36485;">
+                <ion-icon name="arrow-back"></ion-icon> {{'BOTTONS.UPDATE' | translate}}
+        </ion-col>
+    </ion-row>
+    <!--Fin etiquetas de instruccion -->
+    <ion-card padding >
+        <ion-grid>
+            <ion-row>
+                <ion-col col-2>
+                </ion-col>
+                <ion-col col-4>
+                    <p class="total">Total</p>
+                </ion-col>
+                <ion-col col-4 text-right>
+                    <p class="total-price">{{total | currency}}</p>
+                </ion-col>
+                <ion-col col-2>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col col-12 text-center>
+                <b class="_clave">
+                    {{'CART.MORE' | translate}}
+                    </b>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+</ion-content>
+
+<ion-footer no-border>
+    <ion-toolbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-6>
+                    <div [hidden]="(estatus == undefined)">
+                        <div text-center>
+                            <button ion-button round block color="orange" round (click)="cancelarCarrito()" [disabled]="total<=0">{{'BOTTONS.CANCEL' | translate}}</button>
+                        </div>
+                    </div>
+                    <div [hidden]="(estatus == 1)">
+                        <div text-center>
+                            <div text-center>
+                                <button ion-button round block color="orange" round (click)="goBack()">{{'BOTTONS.BACK' | translate}}</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </ion-col>
+                <ion-col col-6>
+                    <button ion-button round block color="orange" round (click)="goToSummary(anonimo)" [disabled]="total<=0">{{'CART.BUTTON' | translate}}</button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-footer>

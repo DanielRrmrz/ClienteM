@@ -200,7 +200,7 @@ export class PaymentPage {
   }
 
   getService() {
-    const url = `https://proyectosinternos.com/lolo/lolo/index.php/cobrar/${this.serviceID}`;
+    const url = `https://proyectosinternos.com/toctoc/toctoc/index.php/cobrar/${this.serviceID}`;
     this.http.get(url).subscribe((res) => {
       const cargo = res.json().cargo;
       this.cobrar = cargo;
